@@ -15,6 +15,9 @@ const theme = createTheme({
 			contrastText: "#455a64",
 		},
 	},
+	typography: {
+		fontFamily: `Poppins`,
+	},
 });
 
 export default theme;
