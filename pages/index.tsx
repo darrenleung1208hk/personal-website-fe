@@ -73,6 +73,7 @@ const Home: NextPage = () => {
 						<Typography>
 							Here are some technologies that I develop my projects with:
 						</Typography>
+						<Typography>- React</Typography>
 					</Box>
 				</Container>
 			</ParallaxLayer>
