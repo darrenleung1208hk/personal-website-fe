@@ -5,8 +5,8 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import type { NextPage } from "next";
 import { ParallaxLayer } from "@react-spring/parallax";
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
 	const { breakpoints, palette } = useTheme();
