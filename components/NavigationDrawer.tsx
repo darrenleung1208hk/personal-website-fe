@@ -10,6 +10,7 @@ import {
 	Typography,
 	useTheme,
 } from "@mui/material";
+import { useRouter } from "next/router";
 import { Fragment, useState } from "react";
 
 type Props = {
@@ -21,7 +22,13 @@ type Props = {
 
 const NavigationDrawer = ({ drawerItems }: Props) => {
 	const { spacing } = useTheme();
+	const router = useRouter();
 	const [drawerOpen, setDrawerOpen] = useState(false);
+
+	const handleClick = (href: string) => {
+		setDrawerOpen(false);
+		router.push(href);
+	};
 
 	return (
 		<Fragment>
@@ -65,7 +72,7 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 				<List sx={{ width: "65vw", pt: 10 }}>
 					{drawerItems.map(({ name, href }) => (
 						<ListItem key={href}>
-							<ListItemButton>
+							<ListItemButton onClick={() => handleClick(href)}>
 								<Typography fontWeight={700} color="primary.main">
 									{name}
 								</Typography>
