@@ -7,6 +7,7 @@ import {
 	ListItem,
 	ListItemButton,
 	Typography,
+	Toolbar,
 	useTheme,
 } from "@mui/material";
 import { Fragment, useState } from "react";
@@ -24,14 +25,16 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 
 	return (
 		<Fragment>
-			<IconButton
-				sx={{ position: "fixed", top: spacing(2), right: spacing(2) }}
-				onClick={() => setDrawerOpen(true)}
-			>
-				<MenuIcon
-					sx={{ color: "primary.main", width: "36px", height: "36px" }}
-				/>
-			</IconButton>
+			<Toolbar>
+				<IconButton
+					sx={{ position: "fixed", top: spacing(2), right: spacing(2) }}
+					onClick={() => setDrawerOpen(true)}
+				>
+					<MenuIcon
+						sx={{ color: "primary.main", width: "36px", height: "36px" }}
+					/>
+				</IconButton>
+			</Toolbar>
 			<Drawer
 				open={drawerOpen}
 				anchor="right"
