@@ -6,6 +6,7 @@ import {
 	List,
 	ListItem,
 	ListItemButton,
+	Typography,
 	useTheme,
 } from "@mui/material";
 import { Fragment, useState } from "react";
@@ -52,7 +53,11 @@ const NavigationDrawer = () => {
 				<List sx={{ width: "65vw", pt: 10 }}>
 					{drawerItems.map(({ name, href }) => (
 						<ListItem key={href}>
-							<ListItemButton>{name}</ListItemButton>
+							<ListItemButton>
+								<Typography fontWeight={700} color="primary.main">
+									{name}
+								</Typography>
+							</ListItemButton>
 						</ListItem>
 					))}
 				</List>
