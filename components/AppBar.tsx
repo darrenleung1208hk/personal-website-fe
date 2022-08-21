@@ -19,12 +19,12 @@ const AppBar = () => {
 	return (
 		<Box>
 			<Toolbar />
-			<MuiAppBar elevation={0}>
+			<MuiAppBar elevation={0} color="inherit">
 				<Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
 					<Stack direction="row" spacing={1}>
 						{navItems.map(({ name, href }) => (
 							<Link href={href} key={href}>
-								<Button variant="contained" disableElevation>
+								<Button disableElevation>
 									<Typography>{name}</Typography>
 								</Button>
 							</Link>
