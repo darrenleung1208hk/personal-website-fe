@@ -9,7 +9,7 @@ const Home: NextPage = () => {
 				Darren Leung.
 			</Typography>
 			<Typography variant="h6">
-				I'm a front-end web developer experienced in headless <br />
+				I&apos;m a front-end web developer experienced in headless <br />
 				CMS integration. I implement responsive frontends using <br />
 				React and the Material UI library to build exceptional
 				<br />
