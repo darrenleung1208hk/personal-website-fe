@@ -18,8 +18,8 @@ const navItems = [
 const AppBar = () => {
 	return (
 		<Box>
-			<Toolbar />
-			<MuiAppBar elevation={0} color="inherit">
+			<Toolbar sx={{ p: 2 }} />
+			<MuiAppBar elevation={0} color="inherit" sx={{ p: 2 }}>
 				<Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
 					<Stack direction="row" spacing={1}>
 						{navItems.map(({ name, href }) => (
