@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
 	return (
-		<Container sx={{ py: "15vh" }}>
+		<Container sx={{ py: "20vh" }}>
 			<Typography variant="h5">Hi there! I am...</Typography>
 			<Typography variant="h2" fontWeight={700} color="primary.main" paragraph>
 				Darren Leung.
