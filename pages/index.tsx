@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 			<Typography variant="h2" fontWeight={700} color="primary.main" paragraph>
 				Darren Leung.
 			</Typography>
-			<Typography>
+			<Typography variant="h6">
 				I'm a front-end web developer experienced in headless <br />
 				CMS integration. I implement responsive frontends using <br />
 				React and the Material UI library to build exceptional
