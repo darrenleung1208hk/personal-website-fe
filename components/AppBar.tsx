@@ -8,14 +8,14 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 
-const navItems = [
-	{ name: "About", href: "#about" },
-	{ name: "Experience", href: "#experience" },
-	{ name: "Skills", href: "#skills" },
-	{ name: "Education", href: "#education" },
-];
+type Props = {
+	navItems: {
+		name: string;
+		href: string;
+	}[];
+};
 
-const AppBar = () => {
+const AppBar = ({ navItems }: Props) => {
 	return (
 		<Box display={{ xs: "none", sm: "block" }}>
 			<Toolbar sx={{ p: 2 }} />

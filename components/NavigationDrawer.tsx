@@ -11,14 +11,14 @@ import {
 } from "@mui/material";
 import { Fragment, useState } from "react";
 
-const drawerItems = [
-	{ name: "About", href: "#about" },
-	{ name: "Experience", href: "#experience" },
-	{ name: "Skills", href: "#skills" },
-	{ name: "Education", href: "#education" },
-];
+type Props = {
+	drawerItems: {
+		name: string;
+		href: string;
+	}[];
+};
 
-const NavigationDrawer = () => {
+const NavigationDrawer = ({ drawerItems }: Props) => {
 	const { spacing } = useTheme();
 	const [drawerOpen, setDrawerOpen] = useState(false);
 
