@@ -25,7 +25,7 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 
 	return (
 		<Fragment>
-			<Toolbar>
+			<Toolbar sx={{ p: 5 }}>
 				<IconButton
 					sx={{ position: "fixed", top: spacing(2), right: spacing(2) }}
 					onClick={() => setDrawerOpen(true)}
