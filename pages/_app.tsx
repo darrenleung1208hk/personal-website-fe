@@ -1,5 +1,6 @@
 import "@fontsource/poppins";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Parallax } from "@react-spring/parallax";
 import type { AppProps } from "next/app";
 import { AppBar, NavigationDrawer } from "../components";
 import "../styles/globals.css";
@@ -16,9 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<AppBar navItems={routes} />
-			<NavigationDrawer drawerItems={routes} />
-			<Component {...pageProps} />
+			<Parallax pages={2} style={{ top: 0, left: 0 }}>
+				<AppBar navItems={routes} />
+				<NavigationDrawer drawerItems={routes} />
+				<Component {...pageProps} />
+			</Parallax>
 		</ThemeProvider>
 	);
 }
