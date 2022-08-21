@@ -26,20 +26,23 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 	return (
 		<Fragment>
 			<Box sx={{ p: 5 }} />
-			<IconButton
-				sx={{
-					display: { xs: "block", sm: "none" },
-					position: "fixed",
-					top: spacing(2),
-					right: spacing(2),
-					zIndex: "appBar",
-				}}
-				onClick={() => setDrawerOpen(true)}
+			<Box
+				width="52px"
+				height="52px"
+				bgcolor="white"
+				display={{ xs: "block", sm: "none" }}
+				position="fixed"
+				top={spacing(2)}
+				right={spacing(2)}
+				zIndex="appBar"
+				borderRadius="36px"
 			>
-				<MenuIcon
-					sx={{ color: "primary.main", width: "36px", height: "36px" }}
-				/>
-			</IconButton>
+				<IconButton onClick={() => setDrawerOpen(true)}>
+					<MenuIcon
+						sx={{ color: "primary.main", width: "36px", height: "36px" }}
+					/>
+				</IconButton>
+			</Box>
 			<Drawer
 				open={drawerOpen}
 				anchor="right"
