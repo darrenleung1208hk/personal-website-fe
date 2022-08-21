@@ -31,7 +31,11 @@ const NavigationDrawer = () => {
 					sx={{ color: "primary.main", width: "36px", height: "36px" }}
 				/>
 			</IconButton>
-			<Drawer open={drawerOpen} anchor="right">
+			<Drawer
+				open={drawerOpen}
+				anchor="right"
+				onClose={() => setDrawerOpen(false)}
+			>
 				<IconButton
 					sx={{
 						position: "absolute",
