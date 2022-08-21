@@ -4,9 +4,9 @@ import { lightBlue } from "@mui/material/colors";
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: "#1a237e",
-			light: "#534bae",
-			dark: "#000051",
+			main: "#01579b",
+			light: "#4f83cc",
+			dark: "#002f6c",
 		},
 		secondary: {
 			main: "#ffd54f",
