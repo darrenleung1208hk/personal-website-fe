@@ -43,23 +43,27 @@ const Home: NextPage = () => {
 					</Box>
 				</Container>
 			</ParallaxLayer>
+			{mdUp && (
+				<ParallaxLayer
+					id="about"
+					offset={1}
+					speed={2}
+					style={{ backgroundColor: palette.primary.main }}
+				/>
+			)}
 			<ParallaxLayer
-				id="about"
-				offset={1}
-				speed={2}
-				style={{ backgroundColor: palette.primary.main }}
-			/>
-			<ParallaxLayer
+				id={!mdUp ? "about" : undefined}
 				offset={1}
 				style={{
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
+					backgroundColor: !mdUp ? palette.primary.main : undefined,
 				}}
 			>
 				<Container>
 					<Box width={{ lg: "60%", color: "white" }}>
-						<Typography variant="h3" fontWeight={700}>
+						<Typography variant="h3" fontWeight={700} paragraph>
 							About Me.
 						</Typography>
 						<Typography>
