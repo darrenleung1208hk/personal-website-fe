@@ -59,7 +59,7 @@ const Home: NextPage = () => {
 			>
 				<Container>
 					<Box width={{ lg: "60%", color: "white" }}>
-						<Typography variant="h3" fontWeight={700}>
+						<Typography variant="h3" fontWeight={700} paragraph>
 							About Me.
 						</Typography>
 						<Typography>
