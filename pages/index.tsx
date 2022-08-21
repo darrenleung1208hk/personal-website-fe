@@ -44,6 +44,7 @@ const Home: NextPage = () => {
 				</Container>
 			</ParallaxLayer>
 			<ParallaxLayer
+				id="about"
 				offset={1}
 				speed={2}
 				style={{ backgroundColor: palette.primary.main }}
