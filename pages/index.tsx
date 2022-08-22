@@ -1,7 +1,7 @@
 import { Box, useTheme } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import type { NextPage } from "next";
-import { About, Experience, Hero } from "../components/Home";
+import { About, Contact, Experience, Hero } from "../components/Home";
 
 const Home: NextPage = () => {
 	const { palette } = useTheme();
@@ -43,6 +43,19 @@ const Home: NextPage = () => {
 				}}
 			>
 				<Experience />
+			</ParallaxLayer>
+			<ParallaxLayer
+				id="contact"
+				offset={3}
+				style={{
+					paddingBottom: "10%",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					backgroundColor: palette.primary.main,
+				}}
+			>
+				<Contact />
 			</ParallaxLayer>
 		</Box>
 	);
