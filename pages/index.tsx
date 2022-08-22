@@ -1,11 +1,10 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import type { NextPage } from "next";
 import { About, Experience, Hero } from "../components/Home";
 
 const Home: NextPage = () => {
-	const { breakpoints, palette } = useTheme();
-	const mdUp = useMediaQuery(breakpoints.up("md"));
+	const { palette } = useTheme();
 
 	return (
 		<Box>
