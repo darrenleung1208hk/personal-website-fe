@@ -9,8 +9,7 @@ import theme from "../styles/theme";
 const routes = [
 	{ name: "About", href: "#about" },
 	{ name: "Experience", href: "#experience" },
-	{ name: "Skills", href: "#skills" },
-	{ name: "Education", href: "#education" },
+	{ name: "Contact", href: "#contact" },
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
