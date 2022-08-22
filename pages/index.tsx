@@ -1,17 +1,17 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import type { NextPage } from "next";
 import { About, Experience, Hero } from "../components/Home";
 
 const Home: NextPage = () => {
-	const { breakpoints, palette } = useTheme();
-	const mdUp = useMediaQuery(breakpoints.up("md"));
+	const { palette } = useTheme();
 
 	return (
 		<Box>
 			<ParallaxLayer
 				offset={0}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -23,6 +23,7 @@ const Home: NextPage = () => {
 				id="about"
 				offset={1}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
 				id="experience"
 				offset={2}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
