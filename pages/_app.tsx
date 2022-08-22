@@ -1,6 +1,6 @@
 import "@fontsource/poppins";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { Parallax } from "@react-spring/parallax";
 import type { AppProps } from "next/app";
 import { AppBar, NavigationDrawer } from "../components";
 import "../styles/globals.css";
