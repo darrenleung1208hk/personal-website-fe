@@ -20,14 +20,20 @@ const Hero = () => {
 					variant={mdUp ? "h2" : "h3"}
 					fontWeight={700}
 					color="primary.main"
-					paragraph
 				>
 					Darren Leung.
 				</Typography>
+				<Typography
+					variant={mdUp ? "h4" : "h5"}
+					fontWeight={700}
+					color="primary.light"
+					paragraph
+				>
+					Frontend Developer
+				</Typography>
 				<Typography variant="h6">
-					I&apos;m a front-end web developer experienced in headless CMS
-					integration. I implement responsive frontends using React and the
-					Material UI library to build exceptional user experiences.
+					Experienced in headless CMS integration. <br />
+					Implement responsive frontends using React and Material library.
 				</Typography>
 			</Box>
 		</Container>
