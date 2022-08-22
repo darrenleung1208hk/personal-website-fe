@@ -19,22 +19,14 @@ const Home: NextPage = () => {
 			>
 				<Hero />
 			</ParallaxLayer>
-			{mdUp && (
-				<ParallaxLayer
-					id="about"
-					offset={1}
-					speed={2}
-					style={{ backgroundColor: palette.primary.main }}
-				/>
-			)}
 			<ParallaxLayer
-				id={!mdUp ? "about" : undefined}
+				id="about"
 				offset={1}
 				style={{
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
-					backgroundColor: !mdUp ? palette.primary.main : undefined,
+					backgroundColor: palette.primary.main,
 				}}
 			>
 				<About />
