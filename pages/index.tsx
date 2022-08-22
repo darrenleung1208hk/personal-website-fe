@@ -48,12 +48,14 @@ const Home: NextPage = () => {
 				id="contact"
 				offset={3}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
+					backgroundColor: palette.primary.main,
 				}}
 			>
-				<About />
+				<Contact />
 			</ParallaxLayer>
 		</Box>
 	);
