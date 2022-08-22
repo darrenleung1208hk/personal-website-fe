@@ -13,7 +13,10 @@ const Experience = () => {
 					Work Experience.
 				</Typography>
 				<Typography variant="h5" fontWeight={700} paragraph>
-					Web Developer, Smart Drop
+					Web Developer,{" "}
+					<a href="https://www.smartdrop.com.hk/" target="_blank">
+						Smart Drop
+					</a>
 				</Typography>
 				<Typography>Jun 2021 -Present</Typography>
 				<Typography component="div">
