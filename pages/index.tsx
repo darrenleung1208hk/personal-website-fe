@@ -11,6 +11,7 @@ const Home: NextPage = () => {
 			<ParallaxLayer
 				offset={0}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
 				id="about"
 				offset={1}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -34,6 +36,7 @@ const Home: NextPage = () => {
 				id="experience"
 				offset={2}
 				style={{
+					paddingBottom: "10%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
