@@ -2,23 +2,13 @@ import { Box, useTheme } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import type { NextPage } from "next";
 import { About, Contact, Experience, Hero } from "../components/Home";
-import { getAllWorkExperience } from "../contentful/api";
-
-type WorkExperience = {
-	jobTitle: string;
-	companyName: string;
-	companyWebsite?: string;
-	jobLocation: string;
-	startDate: Date;
-	endDate?: Date;
-	jobDuties?: string[];
-}[];
+import { getAllWorkExperience, IJobExperience } from "../contentful";
 
 type Props = {
-	workExperience: WorkExperience;
+	workExperience: IJobExperience[];
 };
 
-const Home: NextPage = ({ workExperience }: Props) => {
+const Home: NextPage = ({ hero, workExperience }: Props) => {
 	const { palette } = useTheme();
 
 	return (
@@ -77,7 +67,7 @@ const Home: NextPage = ({ workExperience }: Props) => {
 };
 
 export async function getStaticProps() {
-	const workExperience: WorkExperience = await getAllWorkExperience();
+	const workExperience: IJobExperience[] = await getAllWorkExperience();
 
 	return {
 		props: { workExperience },
