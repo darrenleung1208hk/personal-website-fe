@@ -25,7 +25,7 @@ const Experience = ({ data }: Props) => {
 						<Box key={`job-${index}`}>
 							<Typography variant="h5" fontWeight={700} paragraph>
 								{job.jobTitle},{" "}
-								<a href={job.companyWebsite} target="_blank">
+								<a href={job.companyWebsite} target="_blank" rel="noreferrer">
 									{job.companyName}
 								</a>
 							</Typography>
