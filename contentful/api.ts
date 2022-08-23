@@ -23,6 +23,14 @@ const heroCollectionQueryFragment = `
   }
 `;
 
+const aboutCollectionQueryFragement = `
+  aboutCollection(order: sys_publishedAt_DESC, limit: 1) {
+    items {
+      description
+    }
+  }
+`;
+
 const workExperienceCollectionQueryFragment = `
   workExperienceCollection {
     items {
@@ -42,10 +50,12 @@ export async function getHomePageEntries() {
     query {
       ${heroCollectionQueryFragment}
       ${workExperienceCollectionQueryFragment}
+      ${aboutCollectionQueryFragement}
     }
   `);
 	return {
 		hero: data?.heroCollection?.items[0],
 		workExperience: data?.workExperienceCollection?.items,
+		about: data?.aboutCollection?.items[0],
 	};
 }

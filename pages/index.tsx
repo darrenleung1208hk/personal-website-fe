@@ -2,14 +2,20 @@ import { Box, useTheme } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import type { NextPage } from "next";
 import { About, Contact, Experience, Hero } from "../components/Home";
-import { getHomePageEntries, IHero, IJobExperience } from "../contentful";
+import {
+	getHomePageEntries,
+	IAbout,
+	IHero,
+	IJobExperience,
+} from "../contentful";
 
 type Props = {
 	workExperience: IJobExperience[];
 	hero: IHero;
+	about: IAbout;
 };
 
-const Home: NextPage = ({ hero, workExperience }: Props) => {
+const Home: NextPage = ({ hero, about, workExperience }: Props) => {
 	const { palette } = useTheme();
 
 	return (
@@ -36,7 +42,7 @@ const Home: NextPage = ({ hero, workExperience }: Props) => {
 					backgroundColor: palette.primary.main,
 				}}
 			>
-				<About />
+				<About {...about} />
 			</ParallaxLayer>
 			<ParallaxLayer
 				id="experience"
@@ -68,10 +74,10 @@ const Home: NextPage = ({ hero, workExperience }: Props) => {
 };
 
 export async function getStaticProps() {
-	const { hero, workExperience } = await getHomePageEntries();
+	const { hero, about, workExperience } = await getHomePageEntries();
 
 	return {
-		props: { hero, workExperience },
+		props: { hero, about, workExperience },
 	};
 }
 

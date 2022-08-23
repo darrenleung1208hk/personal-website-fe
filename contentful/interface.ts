@@ -14,3 +14,7 @@ export interface IHero {
 	headline: string;
 	descriptions: string[];
 }
+
+export interface IAbout {
+	description: string;
+}
