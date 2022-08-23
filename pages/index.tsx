@@ -5,6 +5,7 @@ import { About, Contact, Experience, Hero } from "../components/Home";
 import {
 	getHomePageEntries,
 	IAbout,
+	IContact,
 	IHero,
 	IJobExperience,
 } from "../contentful";
@@ -13,9 +14,10 @@ type Props = {
 	workExperience: IJobExperience[];
 	hero: IHero;
 	about: IAbout;
+	contact: IContact;
 };
 
-const Home: NextPage = ({ hero, about, workExperience }: Props) => {
+const Home: NextPage = ({ hero, about, workExperience, contact }: Props) => {
 	const { palette } = useTheme();
 
 	return (
@@ -67,17 +69,17 @@ const Home: NextPage = ({ hero, about, workExperience }: Props) => {
 					backgroundColor: palette.primary.main,
 				}}
 			>
-				<Contact />
+				<Contact {...contact} />
 			</ParallaxLayer>
 		</Box>
 	);
 };
 
 export async function getStaticProps() {
-	const { hero, about, workExperience } = await getHomePageEntries();
+	const { hero, about, workExperience, contact } = await getHomePageEntries();
 
 	return {
-		props: { hero, about, workExperience },
+		props: { hero, about, workExperience, contact },
 	};
 }
 

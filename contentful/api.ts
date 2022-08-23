@@ -45,17 +45,27 @@ const workExperienceCollectionQueryFragment = `
   }
 `;
 
+const contactCollectionQueryFragement = `
+  contactCollection(order: sys_publishedAt_DESC, limit: 1) {
+    items {
+      description
+    }
+  }
+`;
+
 export async function getHomePageEntries() {
 	const { data } = await fetchGraphQL(`
     query {
       ${heroCollectionQueryFragment}
       ${workExperienceCollectionQueryFragment}
       ${aboutCollectionQueryFragement}
+      ${contactCollectionQueryFragement}
     }
   `);
 	return {
 		hero: data?.heroCollection?.items[0],
 		workExperience: data?.workExperienceCollection?.items,
 		about: data?.aboutCollection?.items[0],
+		contact: data?.contactCollection?.items[0],
 	};
 }

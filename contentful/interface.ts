@@ -18,3 +18,7 @@ export interface IHero {
 export interface IAbout {
 	description: string;
 }
+
+export interface IContact {
+	description: string;
+}
