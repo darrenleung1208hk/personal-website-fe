@@ -1,4 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
+import format from "date-fns/format";
 
 type JobExperience = {
 	jobTitle: string;
@@ -13,6 +14,8 @@ type JobExperience = {
 type Props = {
 	data: JobExperience[];
 };
+
+const formatPattern = "MMM yyyy";
 
 const Experience = ({ data }: Props) => {
 	return (
@@ -36,7 +39,10 @@ const Experience = ({ data }: Props) => {
 								</a>
 							</Typography>
 							<Typography>
-								{job.startDate} - {job.endDate || "Present"}
+								{format(new Date(job.startDate), formatPattern)} -{" "}
+								{job.endDate
+									? format(new Date(job.endDate), formatPattern)
+									: "Present"}
 							</Typography>
 							<Typography component="div">
 								<ul>
