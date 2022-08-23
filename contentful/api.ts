@@ -5,7 +5,7 @@ async function fetchGraphQL(query: string) {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+				Authorization: `Bearer ${process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN}`,
 			},
 			body: JSON.stringify({ query }),
 		}
@@ -13,7 +13,7 @@ async function fetchGraphQL(query: string) {
 }
 
 export async function getAllWorkExperience() {
-	const entries = await fetchGraphQL(
+	const res = await fetchGraphQL(
 		`query {
       workExperienceCollection {
         items {
@@ -28,5 +28,5 @@ export async function getAllWorkExperience() {
       }
     }`
 	);
-	return entries?.workExperienceCollection?.items;
+	return res?.data?.workExperienceCollection?.items;
 }
