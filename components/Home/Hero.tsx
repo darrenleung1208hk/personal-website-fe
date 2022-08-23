@@ -5,8 +5,9 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
+import { IHero } from "../../contentful";
 
-const Hero = () => {
+const Hero = ({ greeting, name, headline, descriptions }: IHero) => {
 	const { breakpoints } = useTheme();
 	const mdUp = useMediaQuery(breakpoints.up("md"));
 
@@ -14,14 +15,14 @@ const Hero = () => {
 		<Container>
 			<Box width={{ lg: "75%" }}>
 				<Typography variant="h5" paragraph={!mdUp}>
-					Hi there! I am...
+					{greeting}
 				</Typography>
 				<Typography
 					variant={mdUp ? "h2" : "h3"}
 					fontWeight={700}
 					color="primary.main"
 				>
-					Darren Leung.
+					{name}
 				</Typography>
 				<Typography
 					variant={mdUp ? "h4" : "h5"}
@@ -29,12 +30,13 @@ const Hero = () => {
 					color="primary.light"
 					paragraph
 				>
-					Frontend Developer
+					{headline}
 				</Typography>
-				<Typography variant="h6">
-					Experienced in headless CMS integration. <br />
-					Implement responsive frontends using React and Material library.
-				</Typography>
+				{descriptions?.map((line: string, index: number) => (
+					<Typography key={`hero-description-${index}`} variant="h6">
+						{line}
+					</Typography>
+				))}
 			</Box>
 		</Container>
 	);
