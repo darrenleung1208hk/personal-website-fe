@@ -12,37 +12,40 @@ async function fetchGraphQL(query: string) {
 	).then((response) => response.json());
 }
 
-export async function getHero() {
-	const res = await fetchGraphQL(
-		`query {
-      heroCollection(order: sys_publishedAt_DESC, limit: 1) {
-        items {
-          greeting
-          name
-          headline
-          descriptions
-        }
-      }
-    }`
-	);
-	return res?.data?.heroCollection?.items[0];
-}
+const heroCollectionQueryFragment = `
+  heroCollection(order: sys_publishedAt_DESC, limit: 1) {
+    items {
+      greeting
+      name
+      headline
+      descriptions
+    }
+  }
+`;
 
-export async function getAllWorkExperience() {
-	const res = await fetchGraphQL(
-		`query {
-      workExperienceCollection {
-        items {
-          jobTitle
-          companyName
-          companyWebsite
-          jobLocation
-          startDate
-          endDate
-          jobDuties
-        }
-      }
-    }`
-	);
-	return res?.data?.workExperienceCollection?.items;
+const workExperienceCollectionQueryFragment = `
+  workExperienceCollection {
+    items {
+      jobTitle
+      companyName
+      companyWebsite
+      jobLocation
+      startDate
+      endDate
+      jobDuties
+    }
+  }
+`;
+
+export async function getHomePageEntries() {
+	const { data } = await fetchGraphQL(`
+    query {
+      ${heroCollectionQueryFragment}
+      ${workExperienceCollectionQueryFragment}
+    }
+  `);
+	return {
+		hero: data?.heroCollection?.items[0],
+		workExperience: data?.workExperienceCollection?.items,
+	};
 }
