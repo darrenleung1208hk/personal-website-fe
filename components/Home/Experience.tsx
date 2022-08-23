@@ -1,18 +1,9 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import format from "date-fns/format";
-
-type JobExperience = {
-	jobTitle: string;
-	companyName: string;
-	companyWebsite?: string;
-	jobLocation: string;
-	startDate: Date;
-	endDate?: Date;
-	jobDuties?: string[];
-};
+import { IJobExperience } from "../../contentful";
 
 type Props = {
-	data: JobExperience[];
+	data: IJobExperience[];
 };
 
 const formatPattern = "MMM yyyy";
