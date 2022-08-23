@@ -17,7 +17,7 @@ type Props = {
 	contact: IContact;
 };
 
-const Home: NextPage = ({ hero, about, workExperience, contact }: Props) => {
+const Home: NextPage<Props> = ({ hero, about, workExperience, contact }) => {
 	const { palette } = useTheme();
 
 	return (
