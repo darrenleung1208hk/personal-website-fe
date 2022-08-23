@@ -12,6 +12,22 @@ async function fetchGraphQL(query: string) {
 	).then((response) => response.json());
 }
 
+export async function getHero() {
+	const res = await fetchGraphQL(
+		`query {
+      heroCollection(order: sys_publishedAt_DESC, limit: 1) {
+        items {
+          greeting
+          name
+          headline
+          descriptions
+        }
+      }
+    }`
+	);
+	return res?.data?.heroCollection?.items[0];
+}
+
 export async function getAllWorkExperience() {
 	const res = await fetchGraphQL(
 		`query {

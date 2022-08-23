@@ -7,3 +7,10 @@ export interface IJobExperience {
 	endDate?: Date;
 	jobDuties?: string[];
 }
+
+export interface IHero {
+	greeting: string;
+	name: string;
+	headline: string;
+	descriptions: string[];
+}
