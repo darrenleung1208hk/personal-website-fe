@@ -3,18 +3,24 @@ import React from "react";
 
 interface Props {
 	children: React.ReactNode;
+	dark?: boolean;
+	color?: string;
+	bgcolor?: string;
 }
 
-const SectionWrapper = ({ children }: Props) => {
+const SectionWrapper = ({ children, color, bgcolor, dark = false }: Props) => {
 	return (
 		<Box
 			height="100vh"
 			display="flex"
 			flexDirection="column"
 			justifyContent="center"
+			bgcolor={bgcolor || (dark && "primary.main") || "white"}
 		>
 			<Container>
-				<Box width={{ lg: "75%" }}>{children}</Box>
+				<Box width={{ lg: "75%", color: color || dark ? "white" : "black" }}>
+					{children}
+				</Box>
 			</Container>
 		</Box>
 	);

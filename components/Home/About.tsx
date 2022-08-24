@@ -4,7 +4,7 @@ import SectionWrapper from "../SectionWrapper";
 
 const About = ({ description }: IAbout) => {
 	return (
-		<SectionWrapper>
+		<SectionWrapper dark>
 			<Typography variant="h3" fontWeight={700} paragraph>
 				About Me.
 			</Typography>
