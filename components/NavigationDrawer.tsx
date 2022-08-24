@@ -32,7 +32,6 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 
 	return (
 		<Fragment>
-			<Box sx={{ p: 5 }} />
 			<Box
 				width="52px"
 				height="52px"
