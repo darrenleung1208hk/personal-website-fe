@@ -17,10 +17,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<NavigationDrawer drawerItems={routes} />
-			<Parallax pages={4} style={{ top: 0, left: 0 }}>
-				<AppBar navItems={routes} />
-				<Component {...pageProps} />
-			</Parallax>
+			<AppBar navItems={routes} />
+			<Component {...pageProps} />
 		</ThemeProvider>
 	);
 }
