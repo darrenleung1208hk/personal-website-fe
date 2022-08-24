@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 
 const Contact = () => {
 	return (
@@ -12,16 +12,18 @@ const Contact = () => {
 				voluptatum consequatur! Provident dolore consequuntur odio libero
 				cupiditate.
 			</Typography>
-			<Button
-				disableElevation
-				variant="contained"
-				color="inherit"
-				sx={{ color: "primary.main" }}
-				component="a"
-				href="mailto:leungyatlong1208@gmail.com"
-			>
-				Let's Talk
-			</Button>
+			<Box textAlign="center">
+				<Button
+					disableElevation
+					variant="contained"
+					color="inherit"
+					sx={{ color: "primary.main" }}
+					component="a"
+					href="mailto:leungyatlong1208@gmail.com"
+				>
+					Let's Talk
+				</Button>
+			</Box>
 		</Container>
 	);
 };
