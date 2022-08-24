@@ -8,7 +8,7 @@ const Contact = ({ description }: IContact) => {
 			<Typography variant="h3" fontWeight={700} color="white" paragraph>
 				Get in Touch.
 			</Typography>
-			<Typography color="white" paragraph sx={{ width: "75%" }}>
+			<Typography color="white" paragraph>
 				{description}
 			</Typography>
 			<Button
