@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { IContact } from "../../contentful";
 import SectionWrapper from "../SectionWrapper";
 
@@ -13,7 +13,7 @@ const Contact = ({ description }: Props) => {
 			<Typography color="white" paragraph>
 				{description}
 			</Typography>
-			<Box textAlign="center">
+			<Box textAlign="center" pt={2}>
 				<Button
 					disableElevation
 					variant="contained"
@@ -25,7 +25,7 @@ const Contact = ({ description }: Props) => {
 					Let's Talk
 				</Button>
 			</Box>
-		</Container>
+		</SectionWrapper>
 	);
 };
 
