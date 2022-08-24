@@ -1,9 +1,10 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { IContact } from "../../contentful";
+import SectionWrapper from "../SectionWrapper";
 
 const Contact = ({ description }: IContact) => {
 	return (
-		<Container>
+		<SectionWrapper>
 			<Typography variant="h3" fontWeight={700} color="white" paragraph>
 				Get in Touch.
 			</Typography>
@@ -19,7 +20,7 @@ const Contact = ({ description }: IContact) => {
 			>
 				Chat
 			</Button>
-		</Container>
+		</SectionWrapper>
 	);
 };
 

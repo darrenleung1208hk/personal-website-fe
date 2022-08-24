@@ -1,6 +1,7 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import format from "date-fns/format";
 import { IJobExperience } from "../../contentful";
+import SectionWrapper from "../SectionWrapper";
 
 type Props = {
 	data: IJobExperience[];
@@ -10,7 +11,7 @@ const formatPattern = "MMM yyyy";
 
 const Experience = ({ data }: Props) => {
 	return (
-		<Container>
+		<SectionWrapper>
 			<Box width={{ lg: "75%" }}>
 				<Typography
 					variant="h3"
@@ -46,7 +47,7 @@ const Experience = ({ data }: Props) => {
 					))}
 				</Stack>
 			</Box>
-		</Container>
+		</SectionWrapper>
 	);
 };
 
