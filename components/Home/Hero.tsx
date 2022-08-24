@@ -7,7 +7,9 @@ import {
 } from "@mui/material";
 import { IHero } from "../../contentful";
 
-const Hero = ({ greeting, name, headline, descriptions }: IHero) => {
+interface Props extends IHero {}
+
+const Hero = ({ greeting, name, headline, descriptions }: Props) => {
 	const { breakpoints } = useTheme();
 	const mdUp = useMediaQuery(breakpoints.up("md"));
 

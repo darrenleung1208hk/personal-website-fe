@@ -1,7 +1,9 @@
 import { Button, Container, Typography } from "@mui/material";
 import { IContact } from "../../contentful";
 
-const Contact = ({ description }: IContact) => {
+interface Props extends IContact {}
+
+const Contact = ({ description }: Props) => {
 	return (
 		<Container>
 			<Typography variant="h3" fontWeight={700} color="white" paragraph>

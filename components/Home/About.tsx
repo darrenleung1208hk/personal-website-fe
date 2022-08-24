@@ -1,7 +1,9 @@
 import { Box, Container, Typography } from "@mui/material";
 import { IAbout } from "../../contentful";
 
-const About = ({ description }: IAbout) => {
+interface Props extends IAbout {}
+
+const About = ({ description }: Props) => {
 	return (
 		<Container>
 			<Box width={{ lg: "75%", color: "white" }}>
