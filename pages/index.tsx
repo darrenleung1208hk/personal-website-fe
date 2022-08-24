@@ -1,9 +1,23 @@
 import { Box, useTheme } from "@mui/material";
 import { ParallaxLayer } from "@react-spring/parallax";
 import type { NextPage } from "next";
-import { About, Experience, Hero } from "../components/Home";
+import { About, Contact, Experience, Hero } from "../components/Home";
+import {
+	getHomePageEntries,
+	IAbout,
+	IContact,
+	IHero,
+	IJobExperience,
+} from "../contentful";
 
-const Home: NextPage = () => {
+type Props = {
+	workExperience: IJobExperience[];
+	hero: IHero;
+	about: IAbout;
+	contact: IContact;
+};
+
+const Home: NextPage<Props> = ({ hero, about, workExperience, contact }) => {
 	const { palette } = useTheme();
 
 	return (
@@ -17,7 +31,7 @@ const Home: NextPage = () => {
 					alignItems: "center",
 				}}
 			>
-				<Hero />
+				<Hero {...hero} />
 			</ParallaxLayer>
 			<ParallaxLayer
 				id="about"
@@ -30,7 +44,7 @@ const Home: NextPage = () => {
 					backgroundColor: palette.primary.main,
 				}}
 			>
-				<About />
+				<About {...about} />
 			</ParallaxLayer>
 			<ParallaxLayer
 				id="experience"
@@ -42,10 +56,31 @@ const Home: NextPage = () => {
 					alignItems: "center",
 				}}
 			>
-				<Experience />
+				<Experience data={workExperience} />
+			</ParallaxLayer>
+			<ParallaxLayer
+				id="contact"
+				offset={3}
+				style={{
+					paddingBottom: "10%",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					backgroundColor: palette.primary.main,
+				}}
+			>
+				<Contact {...contact} />
 			</ParallaxLayer>
 		</Box>
 	);
 };
+
+export async function getStaticProps() {
+	const { hero, about, workExperience, contact } = await getHomePageEntries();
+
+	return {
+		props: { hero, about, workExperience, contact },
+	};
+}
 
 export default Home;
