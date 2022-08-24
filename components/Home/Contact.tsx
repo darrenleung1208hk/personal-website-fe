@@ -14,12 +14,13 @@ const Contact = () => {
 			</Typography>
 			<Button
 				disableElevation
-				variant="outlined"
-				color="secondary"
+				variant="contained"
+				color="inherit"
+				sx={{ color: "primary.main" }}
 				component="a"
 				href="mailto:leungyatlong1208@gmail.com"
 			>
-				Chat
+				Let's Talk
 			</Button>
 		</Container>
 	);
