@@ -2,7 +2,9 @@ import { Button, Typography } from "@mui/material";
 import { IContact } from "../../contentful";
 import SectionWrapper from "../SectionWrapper";
 
-const Contact = ({ description }: IContact) => {
+interface Props extends IContact {}
+
+const Contact = ({ description }: Props) => {
 	return (
 		<SectionWrapper dark id="contact">
 			<Typography variant="h3" fontWeight={700} color="white" paragraph>

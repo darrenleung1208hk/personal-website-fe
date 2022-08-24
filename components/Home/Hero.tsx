@@ -2,7 +2,9 @@ import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { IHero } from "../../contentful";
 import SectionWrapper from "../SectionWrapper";
 
-const Hero = ({ greeting, name, headline, descriptions }: IHero) => {
+interface Props extends IHero {}
+
+const Hero = ({ greeting, name, headline, descriptions }: Props) => {
 	const { breakpoints } = useTheme();
 	const mdUp = useMediaQuery(breakpoints.up("md"));
 
