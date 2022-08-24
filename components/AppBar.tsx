@@ -18,8 +18,7 @@ type Props = {
 const AppBar = ({ navItems }: Props) => {
 	return (
 		<Box display={{ xs: "none", sm: "block" }}>
-			<Toolbar sx={{ p: 2 }} />
-			<MuiAppBar elevation={0} color="inherit" sx={{ p: 2 }}>
+			<MuiAppBar elevation={0} color="inherit" position="absolute">
 				<Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
 					<Stack direction="row" spacing={1}>
 						{navItems.map(({ name, href }) => (

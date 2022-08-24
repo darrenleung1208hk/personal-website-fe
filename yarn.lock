@@ -532,60 +532,6 @@
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
   "version" "2.11.6"
 
-"@react-spring/animated@~9.5.2":
-  "integrity" "sha512-oRlX+MmYLbK8IuUZR7SQUnRjXxJ4PMIZeBkBd1SUWVgVJAHMTfJzPltzm+I6p59qX+qLlklYHfnWaonQKDqLuQ=="
-  "resolved" "https://registry.npmjs.org/@react-spring/animated/-/animated-9.5.2.tgz"
-  "version" "9.5.2"
-  dependencies:
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
-
-"@react-spring/core@~9.5.2":
-  "integrity" "sha512-UMRtFH6EfebMp/NMDGCUY5+hZFXsg9iT9hzt/iPzJSz2WMXKBjLoFZHJXcmiVOrIhzHmg1O0pFECn1Wp6pZ5Gw=="
-  "resolved" "https://registry.npmjs.org/@react-spring/core/-/core-9.5.2.tgz"
-  "version" "9.5.2"
-  dependencies:
-    "@react-spring/animated" "~9.5.2"
-    "@react-spring/rafz" "~9.5.2"
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
-
-"@react-spring/parallax@^9.5.2":
-  "integrity" "sha512-1LoJODtccFA7EARDJb1ZesI1jx4/HqBUy7f2UQRt1tWHviVG9imoSTP8S0KqDmGxXaA1itUUvo690bpw02pwzQ=="
-  "resolved" "https://registry.npmjs.org/@react-spring/parallax/-/parallax-9.5.2.tgz"
-  "version" "9.5.2"
-  dependencies:
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/web" "~9.5.2"
-
-"@react-spring/rafz@~9.5.2":
-  "integrity" "sha512-xHSRXKKBI/wDUkZGrspkOm4VlgN6lZi8Tw9Jzibp9QKf3neoof+U2mDNgklvnLaasymtUwAq9o4ZfFvQIVNgPQ=="
-  "resolved" "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.5.2.tgz"
-  "version" "9.5.2"
-
-"@react-spring/shared@~9.5.2":
-  "integrity" "sha512-/OSf2sjwY4BUnjZL6xMC+H3WxOOhMUCk+yZwgdj40XuyUpk6E6tYyiPeD9Yq5GLsZHodkvE1syVMRVReL4ndAg=="
-  "resolved" "https://registry.npmjs.org/@react-spring/shared/-/shared-9.5.2.tgz"
-  "version" "9.5.2"
-  dependencies:
-    "@react-spring/rafz" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
-
-"@react-spring/types@~9.5.2":
-  "integrity" "sha512-n/wBRSHPqTmEd4BFWY6TeR1o/UY+3ujoqMxLjqy90CcY/ozJzDRuREL3c+pxMeTF2+B7dX33dTPCtFMX51nbxg=="
-  "resolved" "https://registry.npmjs.org/@react-spring/types/-/types-9.5.2.tgz"
-  "version" "9.5.2"
-
-"@react-spring/web@~9.5.2":
-  "integrity" "sha512-cusTjbOGTgtbsnpBDjb6Ia+B0lQLE0Fk5rGDog6Sww7hWnLIQ521PMiOBnAWtkntB9eXDUfj7L91nwJviEC0lw=="
-  "resolved" "https://registry.npmjs.org/@react-spring/web/-/web-9.5.2.tgz"
-  "version" "9.5.2"
-  dependencies:
-    "@react-spring/animated" "~9.5.2"
-    "@react-spring/core" "~9.5.2"
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
-
 "@rushstack/eslint-patch@^1.1.3":
   "integrity" "sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA=="
   "resolved" "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz"
@@ -2053,7 +1999,7 @@
   "resolved" "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   "version" "1.2.3"
 
-"react-dom@^16.8.0  || >=17.0.0 || >=18.0.0", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>=16.6.0", "react-dom@18.2.0":
+"react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>=16.6.0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -2081,7 +2027,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^16.8.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.6.0", "react@>=16.8.0", "react@18.2.0":
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.6.0", "react@>=16.8.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
