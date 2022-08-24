@@ -26,7 +26,7 @@ const SectionWrapper = ({
 			bgcolor={bgcolor || (dark && "primary.main") || "white"}
 		>
 			<Container>
-				<Box width={{ lg: "75%", color: color || dark ? "white" : "black" }}>
+				<Box width={{ lg: "75%" }} color={color || dark ? "white" : "black"}>
 					{children}
 				</Box>
 			</Container>
