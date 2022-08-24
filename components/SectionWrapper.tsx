@@ -19,14 +19,18 @@ const SectionWrapper = ({
 	return (
 		<Box
 			id={id}
-			height="100vh"
+			minHeight={{ xs: "50vh", lg: "100vh" }}
 			display="flex"
 			flexDirection="column"
 			justifyContent="center"
 			bgcolor={bgcolor || (dark && "primary.main") || "white"}
 		>
 			<Container>
-				<Box width={{ lg: "75%" }} color={color || dark ? "white" : "black"}>
+				<Box
+					py={5}
+					width={{ lg: "75%" }}
+					color={color || dark ? "white" : "black"}
+				>
 					{children}
 				</Box>
 			</Container>
