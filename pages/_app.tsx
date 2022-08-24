@@ -22,6 +22,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 					content="Experienced in headless CMS integration. Build responsive websites using React."
 				/>
 				<meta name="author" content="Darren Leung" />
+				<meta property="og:title" content="Darren Leung" />
+				<meta
+					property="og:description"
+					content="Experienced in headless CMS integration. Build responsive websites using React."
+				/>
+				<meta property="og:url" content="https://darrenleung.io" />
 			</Head>
 			<CssBaseline />
 			<NavigationDrawer drawerItems={routes} />
