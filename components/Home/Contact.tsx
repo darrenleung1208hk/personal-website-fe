@@ -4,7 +4,7 @@ import SectionWrapper from "../SectionWrapper";
 
 const Contact = ({ description }: IContact) => {
 	return (
-		<SectionWrapper dark>
+		<SectionWrapper dark id="contact">
 			<Typography variant="h3" fontWeight={700} color="white" paragraph>
 				Get in Touch.
 			</Typography>

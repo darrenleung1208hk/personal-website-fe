@@ -6,11 +6,19 @@ interface Props {
 	dark?: boolean;
 	color?: string;
 	bgcolor?: string;
+	id?: string;
 }
 
-const SectionWrapper = ({ children, color, bgcolor, dark = false }: Props) => {
+const SectionWrapper = ({
+	children,
+	id,
+	color,
+	bgcolor,
+	dark = false,
+}: Props) => {
 	return (
 		<Box
+			id={id}
 			height="100vh"
 			display="flex"
 			flexDirection="column"

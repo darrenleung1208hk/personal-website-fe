@@ -11,7 +11,7 @@ const formatPattern = "MMM yyyy";
 
 const Experience = ({ data }: Props) => {
 	return (
-		<SectionWrapper>
+		<SectionWrapper id="experience">
 			<Box width={{ lg: "75%" }}>
 				<Typography
 					variant="h3"
