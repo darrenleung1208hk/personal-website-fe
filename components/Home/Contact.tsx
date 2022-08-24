@@ -13,7 +13,7 @@ const Contact = ({ description }: Props) => {
 			<Typography color="white" paragraph>
 				{description}
 			</Typography>
-			<Box textAlign="center" pt={2}>
+			<Box pt={2}>
 				<Button
 					disableElevation
 					variant="contained"
