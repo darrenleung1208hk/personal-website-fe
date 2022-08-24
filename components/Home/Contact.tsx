@@ -10,15 +10,18 @@ const Contact = ({ description }: IContact) => {
 			<Typography color="white" paragraph sx={{ width: "75%" }}>
 				{description}
 			</Typography>
-			<Button
-				disableElevation
-				variant="outlined"
-				color="secondary"
-				component="a"
-				href="mailto:leungyatlong1208@gmail.com"
-			>
-				Chat
-			</Button>
+			<Box textAlign="center">
+				<Button
+					disableElevation
+					variant="contained"
+					color="inherit"
+					sx={{ color: "primary.main" }}
+					component="a"
+					href="mailto:leungyatlong1208@gmail.com"
+				>
+					Let's Talk
+				</Button>
+			</Box>
 		</Container>
 	);
 };
