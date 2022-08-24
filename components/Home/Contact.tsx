@@ -1,24 +1,30 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { IContact } from "../../contentful";
+import SectionWrapper from "../SectionWrapper";
 
-const Contact = ({ description }: IContact) => {
+interface Props extends IContact {}
+
+const Contact = ({ description }: Props) => {
 	return (
-		<Container>
+		<SectionWrapper dark id="contact">
 			<Typography variant="h3" fontWeight={700} color="white" paragraph>
 				Get in Touch.
 			</Typography>
-			<Typography color="white" paragraph sx={{ width: "75%" }}>
+			<Typography color="white" paragraph>
 				{description}
 			</Typography>
-			<Button
-				disableElevation
-				variant="outlined"
-				color="secondary"
-				component="a"
-				href="mailto:leungyatlong1208@gmail.com"
-			>
-				Chat
-			</Button>
+			<Box textAlign="center">
+				<Button
+					disableElevation
+					variant="contained"
+					color="inherit"
+					sx={{ color: "primary.main" }}
+					component="a"
+					href="mailto:leungyatlong1208@gmail.com"
+				>
+					Let's Talk
+				</Button>
+			</Box>
 		</Container>
 	);
 };
