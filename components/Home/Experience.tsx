@@ -36,11 +36,11 @@ const Experience = ({ data }: Props) => {
 									: "Present"}
 							</Typography>
 							<Typography component="div">
-								<ul>
+								<Stack component="ul" spacing={2}>
 									{job.jobDuties?.map((duty) => (
 										<li key={`job-${index}-duty-${duty}`}>{duty}</li>
 									))}
-								</ul>
+								</Stack>
 							</Typography>
 						</Box>
 					))}
