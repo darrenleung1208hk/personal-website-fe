@@ -1,4 +1,4 @@
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import type { NextPage } from "next";
 import { About, Contact, Experience, Hero } from "../components/Home";
 import {
