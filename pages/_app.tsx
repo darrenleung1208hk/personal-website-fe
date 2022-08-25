@@ -41,6 +41,18 @@ function MyApp({ Component, pageProps }: AppProps) {
 					sizes="16x16"
 					href="/favicon-16x16.png"
 				></link>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="192x192"
+					href="/android-chrome-192x192.png"
+				></link>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="512x512"
+					href="/android-chrome-512x512.png"
+				></link>
 			</Head>
 			<CssBaseline />
 			<NavigationDrawer drawerItems={routes} />
