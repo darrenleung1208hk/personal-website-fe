@@ -13,7 +13,7 @@ const Contact = ({ description }: Props) => {
 			<Typography color="white" paragraph>
 				{description}
 			</Typography>
-			<Box textAlign="center" pt={2}>
+			<Box pt={2}>
 				<Button
 					disableElevation
 					variant="contained"
@@ -22,7 +22,7 @@ const Contact = ({ description }: Props) => {
 					component="a"
 					href="mailto:leungyatlong1208@gmail.com"
 				>
-					Let's Talk
+					Let&apos;s Talk
 				</Button>
 			</Box>
 		</SectionWrapper>
