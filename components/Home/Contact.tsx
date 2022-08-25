@@ -22,7 +22,7 @@ const Contact = ({ description }: Props) => {
 					component="a"
 					href="mailto:leungyatlong1208@gmail.com"
 				>
-					Let's Talk
+					Let&apos;s Talk
 				</Button>
 			</Box>
 		</SectionWrapper>
