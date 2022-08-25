@@ -28,6 +28,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 					content="Experienced in headless CMS integration. Build responsive websites using React."
 				/>
 				<meta property="og:url" content="https://darrenleung.io" />
+				<meta
+					property="og:image"
+					content="https://og-image.vercel.app/Darren%20Leung.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg&widths=400&heights="
+				/>
 				<meta name="apple-mobile-web-app-title" content="darrenleung.io"></meta>
 				<link
 					rel="icon"
