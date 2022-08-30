@@ -32,7 +32,7 @@ const aboutCollectionQueryFragement = `
 `;
 
 const workExperienceCollectionQueryFragment = `
-  workExperienceCollection {
+  workExperienceCollection(order: startDate_DESC) {
     items {
       jobTitle
       companyName
