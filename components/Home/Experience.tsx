@@ -32,8 +32,8 @@ const Experience = ({ data }: Props) => {
 						</Typography>
 						<Typography component="div">
 							<Stack component="ul" spacing={2}>
-								{job.jobDuties?.map((duty) => (
-									<li key={`job-${index}-duty-${duty}`}>{duty}</li>
+								{job.jobDescriptions?.items?.map(({ payload }, index) => (
+									<li key={`job-${index}-description-${index}`}>{payload}</li>
 								))}
 							</Stack>
 						</Typography>
