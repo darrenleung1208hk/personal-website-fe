@@ -1,3 +1,11 @@
+interface IJobDescriptionItem {
+	payload: string;
+}
+
+interface IJobDescriptionList {
+	items: IJobDescriptionItem[];
+}
+
 export interface IJobExperience {
 	jobTitle: string;
 	companyName: string;
@@ -6,6 +14,7 @@ export interface IJobExperience {
 	startDate: Date;
 	endDate?: Date;
 	jobDuties?: string[];
+	jobDescriptions?: IJobDescriptionList;
 }
 
 export interface IHero {

@@ -40,7 +40,11 @@ const workExperienceCollectionQueryFragment = `
       jobLocation
       startDate
       endDate
-      jobDuties
+      jobDescriptions: jobDescriptionsCollection {
+        items {
+          payload
+        }
+			}
     }
   }
 `;
