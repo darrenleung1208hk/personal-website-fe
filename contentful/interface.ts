@@ -26,6 +26,7 @@ export interface IHero {
 
 export interface IAbout {
 	description: string;
+	skills: string[];
 }
 
 export interface IContact {

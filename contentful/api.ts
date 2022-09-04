@@ -27,6 +27,7 @@ const aboutCollectionQueryFragement = `
   aboutCollection(order: sys_publishedAt_DESC, limit: 1) {
     items {
       description
+      skills
     }
   }
 `;
