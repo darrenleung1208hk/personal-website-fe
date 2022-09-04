@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import format from "date-fns/format";
-import { IJobExperience } from "../../contentful";
+import { IJobExperience } from "../../../contentful";
 
 type Props = {
 	data: IJobExperience[];
