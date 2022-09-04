@@ -22,6 +22,7 @@ const AppBar = ({ navItems }: Props) => {
 
 	return (
 		<Box display={{ xs: "none", sm: "block" }}>
+			<Toolbar />
 			<MuiAppBar elevation={trigger ? 4 : 0} color="inherit" position="fixed">
 				<Container>
 					<Toolbar
