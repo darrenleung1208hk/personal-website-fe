@@ -1,16 +1,36 @@
-import { Typography } from "@mui/material";
+import { Chip, Container, Grid, Typography } from "@mui/material";
 import { IAbout } from "../../contentful";
 import SectionWrapper from "../SectionWrapper";
 
 interface Props extends IAbout {}
 
-const About = ({ description }: Props) => {
+const About = ({ description, skills }: Props) => {
 	return (
 		<SectionWrapper id="about">
-			<Typography variant="h3" fontWeight={700} color="primary.main" paragraph>
-				About Me.
-			</Typography>
-			<Typography>{description}</Typography>
+			<Container maxWidth="md">
+				<Typography
+					variant="h3"
+					fontWeight={700}
+					color="primary.main"
+					align="center"
+					paragraph
+				>
+					About Me.
+				</Typography>
+				<Typography variant="subtitle1" align="center" paragraph>
+					{description}
+				</Typography>
+				<Typography variant="subtitle1" align="center" paragraph>
+					Here's my tech stack:
+				</Typography>
+				<Grid container justifyContent="center" spacing={1}>
+					{skills?.map((skill, index) => (
+						<Grid key={`skill-${index}`} item>
+							<Chip label={skill} color="primary" />
+						</Grid>
+					))}
+				</Grid>
+			</Container>
 		</SectionWrapper>
 	);
 };
