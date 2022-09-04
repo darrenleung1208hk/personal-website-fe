@@ -24,7 +24,10 @@ const AppBar = ({ navItems }: Props) => {
 		<Box display={{ xs: "none", sm: "block" }}>
 			<MuiAppBar elevation={trigger ? 4 : 0} color="inherit" position="fixed">
 				<Container>
-					<Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
+					<Toolbar
+						disableGutters
+						sx={{ display: "flex", justifyContent: "flex-end" }}
+					>
 						<Stack direction="row" spacing={1}>
 							{navItems.map(({ name, href }) => (
 								<Link href={href} key={href}>
