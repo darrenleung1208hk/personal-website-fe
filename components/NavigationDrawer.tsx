@@ -36,6 +36,7 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 
 	return (
 		<Box display={{ xs: "block", sm: "none" }}>
+			<Toolbar />
 			<AppBar elevation={trigger ? 4 : 0} color="inherit" position="fixed">
 				<Toolbar
 					sx={{ display: "flex", justifyContent: "flex-end", height: "64px" }}
