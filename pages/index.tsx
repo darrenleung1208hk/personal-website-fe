@@ -28,7 +28,12 @@ const Home: NextPage<Props> = ({ hero, about, workExperience, contact }) => {
 };
 
 export async function getStaticProps() {
-	const { hero, about, workExperience, contact } = await getHomePageEntries();
+	const {
+		hero = null,
+		about = null,
+		workExperience = null,
+		contact = null,
+	} = await getHomePageEntries();
 
 	return {
 		props: { hero, about, workExperience, contact },
