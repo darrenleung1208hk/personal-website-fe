@@ -16,6 +16,7 @@ const Hero = ({ greeting, name, headline, descriptions }: Props) => {
 			<Typography
 				variant={mdUp ? "h2" : "h3"}
 				fontWeight={700}
+				component="h1"
 				color="primary.main"
 			>
 				{name}
