@@ -18,6 +18,13 @@ const theme = createTheme({
 		fontFamily: `Poppins`,
 		button: { textTransform: "none" },
 	},
+	components: {
+		MuiContainer: {
+			defaultProps: {
+				maxWidth: "md",
+			},
+		},
+	},
 });
 
 export default theme;
