@@ -26,6 +26,7 @@ const Hero = ({ greeting, name, headline, descriptions }: Props) => {
 					direction={{ xs: "column-reverse", sm: "row" }}
 					alignItems="center"
 					justifyContent="space-between"
+					spacing={{ xs: 3, sm: 0 }}
 				>
 					<Grid item xs={12} sm={6} md={7}>
 						<Typography variant="h5">{greeting}</Typography>
