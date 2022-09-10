@@ -7,11 +7,10 @@ import {
 	CardHeader,
 	IconButton,
 	Typography,
-	useTheme,
 } from "@mui/material";
 import format from "date-fns/format";
-import { Navigation } from "swiper";
 import "swiper/css";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IJobExperience } from "../../../contentful";
 
@@ -25,12 +24,7 @@ const getWebsiteFavicon = (domain: string, size = 16) =>
 const Timeline = ({ data }: Props) => {
 	return (
 		<Box>
-			<Swiper
-				slidesPerView={3}
-				spaceBetween={24}
-				centeredSlides
-				modules={[Navigation]}
-			>
+			<Swiper slidesPerView={3} spaceBetween={24} centeredSlides grabCursor>
 				{data.map(
 					({
 						jobTitle,
