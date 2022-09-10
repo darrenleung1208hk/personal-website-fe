@@ -6,6 +6,7 @@ import {
 	CardContent,
 	CardHeader,
 	IconButton,
+	Tooltip,
 	Typography,
 } from "@mui/material";
 import format from "date-fns/format";
@@ -51,9 +52,11 @@ const Timeline = ({ data }: Props) => {
 									}
 									action={
 										companyWebsite && (
-											<IconButton href={companyWebsite} target="_blank">
-												<OpenInNewIcon />
-											</IconButton>
+											<Tooltip title={`Learn more about ${companyName}`} arrow>
+												<IconButton href={companyWebsite} target="_blank">
+													<OpenInNewIcon />
+												</IconButton>
+											</Tooltip>
 										)
 									}
 									titleTypographyProps={{ variant: "h6" }}
