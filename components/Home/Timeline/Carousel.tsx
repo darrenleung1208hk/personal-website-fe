@@ -31,56 +31,65 @@ const Timeline = ({ data }: Props) => {
 		<Box pt={2}>
 			<Swiper slidesPerView={3} spaceBetween={24} centeredSlides grabCursor>
 				{data?.map(
-					({ title, organization, startDate, endDate, descriptions }) => (
-						<SwiperSlide>
-							<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
-								<CardHeader
-									title={title}
-									titleTypographyProps={{
-										variant: "h6",
-										color: "primary.main",
-									}}
-									subheader={`${organization.name}, ${format(
-										new Date(startDate),
-										"yyyy"
-									)} - ${
-										endDate ? format(new Date(endDate), "yyyy") : "Present"
-									}`}
-									avatar={
-										organization.website && (
-											<Avatar
-												src={getWebsiteFavicon(organization.website, 64)}
-											/>
-										)
-									}
-									action={
-										organization.website && (
-											<Tooltip
-												title={`Learn more about ${organization.name}`}
-												arrow
-											>
-												<IconButton href={organization.website} target="_blank">
-													<OpenInNewIcon />
-												</IconButton>
-											</Tooltip>
-										)
-									}
-								/>
-								<CardContent>
-									<List>
-										{descriptions?.map((item) => (
-											<ListItem dense disableGutters alignItems="flex-start">
-												<ListItemIcon sx={{ minWidth: "40px" }}>
-													<ArrowRightIcon sx={{ color: "primary.main" }} />
-												</ListItemIcon>
-												<ListItemText primary={item} />
-											</ListItem>
-										))}
-									</List>
-								</CardContent>
-							</Card>
-						</SwiperSlide>
-					)
+					({ title, organization, startDate, endDate, descriptions }) => {
+						const dateFormat = "yyyy";
+						const formattedStartDate = format(new Date(startDate), dateFormat);
+						const formattedEndDate = endDate
+							? format(new Date(endDate), dateFormat)
+							: "Present";
+						const period =
+							formattedStartDate !== formattedEndDate
+								? `${formattedStartDate} - ${formattedEndDate}`
+								: formattedStartDate;
+						return (
+							<SwiperSlide>
+								<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
+									<CardHeader
+										title={title}
+										titleTypographyProps={{
+											variant: "h6",
+											color: "primary.main",
+										}}
+										subheader={`${organization.name}, ${period}`}
+										avatar={
+											organization.website && (
+												<Avatar
+													src={getWebsiteFavicon(organization.website, 64)}
+												/>
+											)
+										}
+										action={
+											organization.website && (
+												<Tooltip
+													title={`Learn more about ${organization.name}`}
+													arrow
+												>
+													<IconButton
+														href={organization.website}
+														target="_blank"
+													>
+														<OpenInNewIcon />
+													</IconButton>
+												</Tooltip>
+											)
+										}
+									/>
+									<CardContent>
+										<List>
+											{descriptions?.map((item) => (
+												<ListItem dense disableGutters alignItems="flex-start">
+													<ListItemIcon sx={{ minWidth: "40px" }}>
+														<ArrowRightIcon sx={{ color: "primary.main" }} />
+													</ListItemIcon>
+													<ListItemText primary={item} />
+												</ListItem>
+											))}
+										</List>
+									</CardContent>
+								</Card>
+							</SwiperSlide>
+						);
+					}
 				)}
 			</Swiper>
 		</Box>
