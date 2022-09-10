@@ -24,7 +24,7 @@ const getWebsiteFavicon = (domain: string, size = 16) =>
 
 const Timeline = ({ data }: Props) => {
 	return (
-		<Box>
+		<Box pt={2}>
 			<Swiper slidesPerView={3} spaceBetween={24} centeredSlides grabCursor>
 				{data.map(
 					({
@@ -36,7 +36,7 @@ const Timeline = ({ data }: Props) => {
 						endDate,
 					}) => (
 						<SwiperSlide>
-							<Card sx={{ m: 2, p: 2, height: "500px" }}>
+							<Card sx={{ m: 2, p: 2, height: "500px" }} raised>
 								<CardHeader
 									title={jobTitle}
 									subheader={`${companyName}, ${format(
