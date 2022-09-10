@@ -6,8 +6,6 @@ type Props = {
 	data: IJobExperience[];
 };
 
-const formatPattern = "MMM yyyy";
-
 const Experience = ({ data }: Props) => {
 	return (
 		<Box id="experience" py={12}>
