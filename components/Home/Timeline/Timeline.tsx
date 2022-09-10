@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { IJobExperience } from "../../../contentful";
-import Timeline from "./Timeline";
+import Carousel from "./Carousel";
 
 type Props = {
 	data: IJobExperience[];
@@ -18,7 +18,7 @@ const Experience = ({ data }: Props) => {
 			>
 				Timeline.
 			</Typography>
-			<Timeline data={data} />
+			<Carousel data={data} />
 		</Box>
 	);
 };

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import type { NextPage } from "next";
-import { About, Contact, Experience, Hero } from "../components/Home";
+import { About, Contact, Hero, Timeline } from "../components/Home";
 import {
 	getHomePageEntries,
 	IAbout,
@@ -21,7 +21,7 @@ const Home: NextPage<Props> = ({ hero, about, workExperience, contact }) => {
 		<Box>
 			<Hero {...hero} />
 			<About {...about} />
-			<Experience data={workExperience} />
+			<Timeline data={workExperience} />
 			<Contact {...contact} />
 		</Box>
 	);
