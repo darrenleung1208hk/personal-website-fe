@@ -68,7 +68,7 @@ const Timeline = ({ data }: Props) => {
 								<CardContent>
 									<List>
 										{jobDescriptions?.items?.map(({ payload }) => (
-											<ListItem dense alignItems="flex-start">
+											<ListItem dense disableGutters alignItems="flex-start">
 												<ListItemIcon sx={{ minWidth: "40px" }}>
 													<ArrowRightIcon sx={{ color: "primary.main" }} />
 												</ListItemIcon>
