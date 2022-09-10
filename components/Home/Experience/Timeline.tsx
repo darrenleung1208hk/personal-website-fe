@@ -43,6 +43,10 @@ const Timeline = ({ data }: Props) => {
 							<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
 								<CardHeader
 									title={jobTitle}
+									titleTypographyProps={{
+										variant: "h6",
+										color: "primary.main",
+									}}
 									subheader={`${companyName}, ${format(
 										new Date(startDate),
 										"yyyy"
@@ -63,7 +67,6 @@ const Timeline = ({ data }: Props) => {
 											</Tooltip>
 										)
 									}
-									titleTypographyProps={{ variant: "h6" }}
 								/>
 								<CardContent>
 									<List>
