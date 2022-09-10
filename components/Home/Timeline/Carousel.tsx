@@ -17,10 +17,10 @@ import format from "date-fns/format";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { IJobExperience } from "../../../contentful";
+import { IExperience } from "../../../contentful";
 
 type Props = {
-	data: IJobExperience[];
+	data: IExperience[];
 };
 
 const getWebsiteFavicon = (domain: string, size = 16) =>
@@ -30,38 +30,36 @@ const Timeline = ({ data }: Props) => {
 	return (
 		<Box pt={2}>
 			<Swiper slidesPerView={3} spaceBetween={24} centeredSlides grabCursor>
-				{data.map(
-					({
-						jobTitle,
-						companyName,
-						companyWebsite,
-						jobDescriptions,
-						startDate,
-						endDate,
-					}) => (
+				{data?.map(
+					({ title, organization, startDate, endDate, descriptions }) => (
 						<SwiperSlide>
 							<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
 								<CardHeader
-									title={jobTitle}
+									title={title}
 									titleTypographyProps={{
 										variant: "h6",
 										color: "primary.main",
 									}}
-									subheader={`${companyName}, ${format(
+									subheader={`${organization.name}, ${format(
 										new Date(startDate),
 										"yyyy"
 									)} - ${
 										endDate ? format(new Date(endDate), "yyyy") : "Present"
 									}`}
 									avatar={
-										companyWebsite && (
-											<Avatar src={getWebsiteFavicon(companyWebsite, 64)} />
+										organization.website && (
+											<Avatar
+												src={getWebsiteFavicon(organization.website, 64)}
+											/>
 										)
 									}
 									action={
-										companyWebsite && (
-											<Tooltip title={`Learn more about ${companyName}`} arrow>
-												<IconButton href={companyWebsite} target="_blank">
+										organization.website && (
+											<Tooltip
+												title={`Learn more about ${organization.name}`}
+												arrow
+											>
+												<IconButton href={organization.website} target="_blank">
 													<OpenInNewIcon />
 												</IconButton>
 											</Tooltip>
@@ -70,12 +68,12 @@ const Timeline = ({ data }: Props) => {
 								/>
 								<CardContent>
 									<List>
-										{jobDescriptions?.items?.map(({ payload }) => (
+										{descriptions?.map((item) => (
 											<ListItem dense disableGutters alignItems="flex-start">
 												<ListItemIcon sx={{ minWidth: "40px" }}>
 													<ArrowRightIcon sx={{ color: "primary.main" }} />
 												</ListItemIcon>
-												<ListItemText primary={payload} />
+												<ListItemText primary={item} />
 											</ListItem>
 										))}
 									</List>
