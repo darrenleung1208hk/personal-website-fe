@@ -18,7 +18,7 @@ const Experience = ({ data }: Props) => {
 				textAlign="center"
 				paragraph
 			>
-				Work Experience.
+				Timeline.
 			</Typography>
 			<Timeline data={data} />
 		</Box>
