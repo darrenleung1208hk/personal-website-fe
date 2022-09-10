@@ -8,7 +8,7 @@ type Props = {
 
 const Experience = ({ data }: Props) => {
 	return (
-		<Box id="experience" py={12}>
+		<Box id="timeline" py={12}>
 			<Typography
 				variant="h3"
 				fontWeight={700}
