@@ -8,8 +8,6 @@ import {
 	IconButton,
 	Tooltip,
 	Typography,
-	useMediaQuery,
-	useTheme,
 } from "@mui/material";
 import format from "date-fns/format";
 import "swiper/css";
