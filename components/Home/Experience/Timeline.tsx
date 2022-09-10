@@ -8,6 +8,8 @@ import {
 	IconButton,
 	Tooltip,
 	Typography,
+	useMediaQuery,
+	useTheme,
 } from "@mui/material";
 import format from "date-fns/format";
 import "swiper/css";
@@ -36,7 +38,7 @@ const Timeline = ({ data }: Props) => {
 						endDate,
 					}) => (
 						<SwiperSlide>
-							<Card sx={{ m: 2, p: 2, height: "500px" }} raised>
+							<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
 								<CardHeader
 									title={jobTitle}
 									subheader={`${companyName}, ${format(
