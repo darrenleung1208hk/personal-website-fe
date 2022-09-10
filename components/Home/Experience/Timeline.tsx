@@ -1,3 +1,4 @@
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import {
 	Avatar,
@@ -6,8 +7,11 @@ import {
 	CardContent,
 	CardHeader,
 	IconButton,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
 	Tooltip,
-	Typography,
 } from "@mui/material";
 import format from "date-fns/format";
 import "swiper/css";
@@ -62,11 +66,16 @@ const Timeline = ({ data }: Props) => {
 									titleTypographyProps={{ variant: "h6" }}
 								/>
 								<CardContent>
-									<Typography component="ul">
+									<List>
 										{jobDescriptions?.items?.map(({ payload }) => (
-											<li>{payload}</li>
+											<ListItem dense alignItems="flex-start">
+												<ListItemIcon sx={{ minWidth: "40px" }}>
+													<ArrowRightIcon sx={{ color: "primary.main" }} />
+												</ListItemIcon>
+												<ListItemText primary={payload} />
+											</ListItem>
 										))}
-									</Typography>
+									</List>
 								</CardContent>
 							</Card>
 						</SwiperSlide>
