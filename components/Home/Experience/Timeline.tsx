@@ -23,9 +23,6 @@ const getWebsiteFavicon = (domain: string, size = 16) =>
 	`https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`;
 
 const Timeline = ({ data }: Props) => {
-	const { palette } = useTheme();
-	console.log(data);
-
 	return (
 		<Box>
 			<Swiper
