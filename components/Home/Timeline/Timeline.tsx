@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { IExperience } from "../../../contentful";
+import Accordion from "./Accordions";
 import Carousel from "./Carousel";
 
 type Props = {
@@ -20,6 +21,9 @@ const Experience = ({ data }: Props) => {
 			</Typography>
 			<Box display={{ xs: "none", md: "block" }}>
 				<Carousel data={data} />
+			</Box>
+			<Box display={{ xs: "block", md: "none" }}>
+				<Accordion data={data} />
 			</Box>
 		</Box>
 	);
