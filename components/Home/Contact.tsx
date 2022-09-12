@@ -1,6 +1,6 @@
-import { Box, Button, Chip, Container, Grid, Typography } from "@mui/material";
-import { IContact } from "../../contentful";
 import EmailIcon from "@mui/icons-material/Email";
+import { Box, Button, Container, Typography } from "@mui/material";
+import { IContact } from "../../contentful";
 
 interface Props extends IContact {}
 
