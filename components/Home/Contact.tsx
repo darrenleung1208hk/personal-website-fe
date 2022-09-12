@@ -11,7 +11,7 @@ const Contact = ({ description }: Props) => {
 			py={{ xs: 4, md: 12 }}
 			bgcolor="primary.main"
 			sx={{
-				boxShadow: `inset 0px 12px 6px -6px rgba(0,0,0,0.14), inset 0px -12px 6px -6px rgba(0,0,0,0.20)`,
+				boxShadow: `inset 0px 12px 6px -6px rgba(0,0,0,0.14)`,
 			}}
 		>
 			<Container>
