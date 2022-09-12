@@ -19,6 +19,8 @@ export interface ITimeline {
 export interface IProfile {
 	name: string;
 	title: string;
+	greeting: string;
+	shortIntroduction: string[];
 	skills: string[];
 	email: string;
 	github: string;
@@ -31,7 +33,7 @@ export interface IHero {
 	greeting?: string;
 	name: string;
 	title: string;
-	descriptions?: string[];
+	shortIntroduction?: string[];
 }
 
 export interface IAbout {
