@@ -13,20 +13,18 @@ const routes = [
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
+	const { _appProps } = pageProps;
+	const title = `${_appProps.name} | ${_appProps.title}`;
+	const description = _appProps.shortIntroduction?.join(" ");
+
 	return (
 		<ThemeProvider theme={theme}>
 			<Head>
-				<title>Darren Leung - Frontend Developer</title>
-				<meta
-					name="description"
-					content="Experienced in headless CMS integration. Build responsive websites using React."
-				/>
-				<meta name="author" content="Darren Leung" />
-				<meta property="og:title" content="Darren Leung | Frontend Developer" />
-				<meta
-					property="og:description"
-					content="Experienced in headless CMS integration. Build responsive websites using React."
-				/>
+				<title>{title}</title>
+				<meta property="og:title" content={title} />
+				<meta name="author" content={_appProps.name} />
+				<meta name="description" content={description} />
+				<meta property="og:description" content={description} />
 				<meta property="og:url" content="https://darrenleung.io" />
 				<meta
 					property="og:image"

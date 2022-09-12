@@ -44,6 +44,14 @@ export async function getStaticProps() {
 	]);
 	const aboutProps = _.pick(profile, ["introduction", "skills"]);
 	const contactProps = _.pick(profile, ["conclusion", "email"]);
+	const _appProps = _.pick(profile, [
+		"name",
+		"title",
+		"shortIntroduction",
+		"email",
+		"github",
+		"linkedin",
+	]);
 
 	return {
 		props: {
@@ -51,6 +59,7 @@ export async function getStaticProps() {
 			heroProps,
 			aboutProps,
 			contactProps,
+			_appProps,
 		},
 	};
 }
