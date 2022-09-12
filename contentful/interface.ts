@@ -12,6 +12,10 @@ export interface IExperience {
 	organization: IOrganization;
 }
 
+export interface ITimeline {
+	data: IExperience[];
+}
+
 export interface IProfile {
 	name: string;
 	title: string;

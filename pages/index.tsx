@@ -6,12 +6,12 @@ import {
 	getHomePageEntries,
 	IAbout,
 	IContact,
-	IExperience,
 	IHero,
+	ITimeline,
 } from "../contentful";
 
 type Props = {
-	timelineProps: IExperience[];
+	timelineProps: ITimeline;
 	heroProps: IHero;
 	aboutProps: IAbout;
 	contactProps: IContact;
@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({
 		<Box>
 			<Hero {...heroProps} />
 			<About {...aboutProps} />
-			<Timeline data={timelineProps} />
+			<Timeline {...timelineProps} />
 			<Contact {...contactProps} />
 		</Box>
 	);
@@ -41,7 +41,12 @@ export async function getStaticProps() {
 	const contactProps = _.pick(profile, ["conclusion", "email"]);
 
 	return {
-		props: { timelineProps: experience, heroProps, aboutProps, contactProps },
+		props: {
+			timelineProps: { data: experience },
+			heroProps,
+			aboutProps,
+			contactProps,
+		},
 	};
 }
 
