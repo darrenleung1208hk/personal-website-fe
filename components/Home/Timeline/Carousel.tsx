@@ -15,18 +15,15 @@ import {
 	Tooltip,
 	useMediaQuery,
 } from "@mui/material";
-import format from "date-fns/format";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IExperience } from "../../../contentful";
+import { getPositionPeriod, getWebsiteFavicon } from "./utils";
 
 type Props = {
 	data: IExperience[];
 };
-
-const getWebsiteFavicon = (domain: string, size = 16) =>
-	`https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`;
 
 const Timeline = ({ data }: Props) => {
 	const xlUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("xl"));
@@ -44,15 +41,6 @@ const Timeline = ({ data }: Props) => {
 						{ title, organization, startDate, endDate, descriptions },
 						index1
 					) => {
-						const dateFormat = "yyyy";
-						const formattedStartDate = format(new Date(startDate), dateFormat);
-						const formattedEndDate = endDate
-							? format(new Date(endDate), dateFormat)
-							: "Present";
-						const period =
-							formattedStartDate !== formattedEndDate
-								? `${formattedStartDate} - ${formattedEndDate}`
-								: formattedStartDate;
 						return (
 							<SwiperSlide key={`timeline-${index1}`}>
 								<Card sx={{ m: 2, p: 2, height: "500px" }} raised>
@@ -62,7 +50,10 @@ const Timeline = ({ data }: Props) => {
 											variant: "h6",
 											color: "primary.main",
 										}}
-										subheader={`${organization.name}, ${period}`}
+										subheader={`${organization.name}, ${getPositionPeriod(
+											startDate,
+											endDate
+										)}`}
 										avatar={
 											organization.website && (
 												<Avatar
