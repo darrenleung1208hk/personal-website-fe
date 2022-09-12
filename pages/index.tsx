@@ -7,36 +7,42 @@ import {
 	IContact,
 	IHero,
 	IExperience,
+	IProfile,
 } from "../contentful";
+import _ from "lodash";
 
 type Props = {
-	experience: IExperience[];
-	hero: IHero;
-	about: IAbout;
-	contact: IContact;
+	timelineProps: IExperience[];
+	heroProps: IHero;
+	aboutProps: IAbout;
+	contactProps: IContact;
 };
 
-const Home: NextPage<Props> = ({ hero, about, experience, contact }) => {
+const Home: NextPage<Props> = ({
+	timelineProps,
+	heroProps,
+	aboutProps,
+	contactProps,
+}: Props) => {
 	return (
 		<Box>
-			<Hero {...hero} />
-			<About {...about} />
-			<Timeline data={experience} />
-			<Contact {...contact} />
+			<Hero {...heroProps} />
+			<About {...aboutProps} />
+			<Timeline data={timelineProps} />
+			<Contact {...contactProps} />
 		</Box>
 	);
 };
 
 export async function getStaticProps() {
-	const {
-		hero = null,
-		about = null,
-		experience = null,
-		contact = null,
-	} = await getHomePageEntries();
+	const { experience = null, profile = null } = await getHomePageEntries();
+
+	const heroProps = _.pick(profile, ["name", "title"]);
+	const aboutProps = _.pick(profile, ["introduction", "skills"]);
+	const contactProps = _.pick(profile, ["conclusion", "email"]);
 
 	return {
-		props: { hero, about, experience, contact },
+		props: { timelineProps: experience, heroProps, aboutProps, contactProps },
 	};
 }
 
