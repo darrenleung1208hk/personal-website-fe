@@ -1,15 +1,14 @@
 import { Box } from "@mui/material";
+import _ from "lodash";
 import type { NextPage } from "next";
 import { About, Contact, Hero, Timeline } from "../components/Home";
 import {
 	getHomePageEntries,
 	IAbout,
 	IContact,
-	IHero,
 	IExperience,
-	IProfile,
+	IHero,
 } from "../contentful";
-import _ from "lodash";
 
 type Props = {
 	timelineProps: IExperience[];
