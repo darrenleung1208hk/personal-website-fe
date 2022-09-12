@@ -60,7 +60,7 @@ const Accordions = ({ data }: Props) => {
 										disableGutters
 										alignItems="flex-start"
 									>
-										<ListItemIcon sx={{ minWidth: "40px" }}>
+										<ListItemIcon sx={{ minWidth: "30px" }}>
 											<ArrowRightIcon sx={{ color: "primary.main" }} />
 										</ListItemIcon>
 										<ListItemText
