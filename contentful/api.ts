@@ -32,20 +32,18 @@ const aboutCollectionQueryFragement = `
   }
 `;
 
-const workExperienceCollectionQueryFragment = `
-  workExperienceCollection(order: startDate_DESC) {
+const experienceQueryFragement = `
+  positionCollection(order: startDate_DESC) {
     items {
-      jobTitle
-      companyName
-      companyWebsite
-      jobLocation
+      title
       startDate
       endDate
-      jobDescriptions: jobDescriptionsCollection {
-        items {
-          payload
-        }
-			}
+      descriptions
+      organization {
+        name
+        website
+        location
+      }
     }
   }
 `;
@@ -62,14 +60,14 @@ export async function getHomePageEntries() {
 	const { data } = await fetchGraphQL(`
     query {
       ${heroCollectionQueryFragment}
-      ${workExperienceCollectionQueryFragment}
       ${aboutCollectionQueryFragement}
+      ${experienceQueryFragement}
       ${contactCollectionQueryFragement}
     }
   `);
 	return {
 		hero: data?.heroCollection?.items[0],
-		workExperience: data?.workExperienceCollection?.items,
+		experience: data?.positionCollection?.items,
 		about: data?.aboutCollection?.items[0],
 		contact: data?.contactCollection?.items[0],
 	};

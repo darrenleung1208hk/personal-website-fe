@@ -8,7 +8,7 @@ import Head from "next/head";
 
 const routes = [
 	{ name: "About", href: "#about" },
-	{ name: "Experience", href: "#experience" },
+	{ name: "Timeline", href: "#timeline" },
 	{ name: "Contact", href: "#contact" },
 ];
 

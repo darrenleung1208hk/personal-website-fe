@@ -1,27 +1,27 @@
 import { Box } from "@mui/material";
 import type { NextPage } from "next";
-import { About, Contact, Experience, Hero } from "../components/Home";
+import { About, Contact, Hero, Timeline } from "../components/Home";
 import {
 	getHomePageEntries,
 	IAbout,
 	IContact,
 	IHero,
-	IJobExperience,
+	IExperience,
 } from "../contentful";
 
 type Props = {
-	workExperience: IJobExperience[];
+	experience: IExperience[];
 	hero: IHero;
 	about: IAbout;
 	contact: IContact;
 };
 
-const Home: NextPage<Props> = ({ hero, about, workExperience, contact }) => {
+const Home: NextPage<Props> = ({ hero, about, experience, contact }) => {
 	return (
 		<Box>
 			<Hero {...hero} />
 			<About {...about} />
-			<Experience data={workExperience} />
+			<Timeline data={experience} />
 			<Contact {...contact} />
 		</Box>
 	);
@@ -31,12 +31,12 @@ export async function getStaticProps() {
 	const {
 		hero = null,
 		about = null,
-		workExperience = null,
+		experience = null,
 		contact = null,
 	} = await getHomePageEntries();
 
 	return {
-		props: { hero, about, workExperience, contact },
+		props: { hero, about, experience, contact },
 	};
 }
 

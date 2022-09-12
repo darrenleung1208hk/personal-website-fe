@@ -1,20 +1,15 @@
-interface IJobDescriptionItem {
-	payload: string;
+export interface IOrganization {
+	name: string;
+	website: string;
+	location: string;
 }
 
-interface IJobDescriptionList {
-	items: IJobDescriptionItem[];
-}
-
-export interface IJobExperience {
-	jobTitle: string;
-	companyName: string;
-	companyWebsite?: string;
-	jobLocation: string;
+export interface IExperience {
+	title: string;
 	startDate: Date;
 	endDate?: Date;
-	jobDuties?: string[];
-	jobDescriptions?: IJobDescriptionList;
+	descriptions?: string[];
+	organization: IOrganization;
 }
 
 export interface IHero {

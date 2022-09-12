@@ -1,4 +1,4 @@
 export { default as Hero } from "./Hero";
 export { default as About } from "./About";
-export { default as Experience } from "./Experience";
+export { default as Timeline } from "./Timeline";
 export { default as Contact } from "./Contact";
