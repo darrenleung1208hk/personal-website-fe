@@ -26,7 +26,11 @@ const Accordions = ({ data }: Props) => {
 		<Box>
 			{data?.map(
 				({ title, organization, startDate, endDate, descriptions }, index1) => (
-					<Accordion key={`timeline-${index1}`} elevation={0}>
+					<Accordion
+						key={`timeline-${index1}`}
+						defaultExpanded={index1 === 0}
+						elevation={0}
+					>
 						<AccordionSummary expandIcon={<ExpandMoreIcon />}>
 							<Stack direction="row" alignItems="center" spacing={2}>
 								<Avatar src={getWebsiteFavicon(organization.website)} />
