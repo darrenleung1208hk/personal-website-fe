@@ -27,7 +27,7 @@ const About = ({ description, skills }: Props) => {
 					{description}
 				</Typography>
 				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
-					Here's my tech stack:
+					Here&apos;s my tech stack:
 				</Typography>
 				<Grid container justifyContent="center" spacing={1}>
 					{skills?.map((skill, index) => (
