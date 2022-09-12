@@ -12,22 +12,17 @@ async function fetchGraphQL(query: string) {
 	).then((response) => response.json());
 }
 
-const heroCollectionQueryFragment = `
-  heroCollection(order: sys_publishedAt_DESC, limit: 1) {
+const profileQueryFragment = `
+  profileCollection(order: sys_publishedAt_DESC, limit: 1) {
     items {
-      greeting
-      name
-      headline
-      descriptions
-    }
-  }
-`;
-
-const aboutCollectionQueryFragement = `
-  aboutCollection(order: sys_publishedAt_DESC, limit: 1) {
-    items {
-      description
+			name
+      title
       skills
+      email
+      github
+      linkedin
+      introduction
+      conclusion
     }
   }
 `;
@@ -48,27 +43,15 @@ const experienceQueryFragement = `
   }
 `;
 
-const contactCollectionQueryFragement = `
-  contactCollection(order: sys_publishedAt_DESC, limit: 1) {
-    items {
-      description
-    }
-  }
-`;
-
 export async function getHomePageEntries() {
 	const { data } = await fetchGraphQL(`
     query {
-      ${heroCollectionQueryFragment}
-      ${aboutCollectionQueryFragement}
       ${experienceQueryFragement}
-      ${contactCollectionQueryFragement}
+      ${profileQueryFragment}
     }
   `);
 	return {
-		hero: data?.heroCollection?.items[0],
 		experience: data?.positionCollection?.items,
-		about: data?.aboutCollection?.items[0],
-		contact: data?.contactCollection?.items[0],
+		profile: data?.profileCollection?.items[0],
 	};
 }
