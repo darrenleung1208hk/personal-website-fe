@@ -12,6 +12,17 @@ export interface IExperience {
 	organization: IOrganization;
 }
 
+export interface IProfile {
+	name: string;
+	title: string;
+	skills: string[];
+	email: string;
+	github: string;
+	linkedin: string;
+	introduction: string;
+	conclusion: string;
+}
+
 export interface IHero {
 	greeting: string;
 	name: string;
