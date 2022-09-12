@@ -2,8 +2,13 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
 	Accordion,
 	AccordionSummary,
+	AccordionDetails,
 	Avatar,
 	Box,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
 	Stack,
 	Typography,
 } from "@mui/material";
@@ -33,7 +38,26 @@ const Accordions = ({ data }: Props) => {
 								</Box>
 							</Stack>
 						</AccordionSummary>
-						{/* <AccordionDetails></AccordionDetails> */}
+						<AccordionDetails>
+							<List>
+								{descriptions?.map((item, index2) => (
+									<ListItem
+										key={`timeline-${index1}-description-${index2}`}
+										dense
+										disableGutters
+										alignItems="flex-start"
+									>
+										<ListItemIcon sx={{ minWidth: "40px" }}>
+											<ArrowRightIcon sx={{ color: "primary.main" }} />
+										</ListItemIcon>
+										<ListItemText
+											primary={item}
+											primaryTypographyProps={{ variant: "body1" }}
+										/>
+									</ListItem>
+								))}
+							</List>
+						</AccordionDetails>
 					</Accordion>
 				)
 			)}
