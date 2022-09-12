@@ -14,7 +14,7 @@ interface Props extends IHero {}
 
 const heroImageBorderRadius = 2;
 
-const Hero = ({ greeting, name, headline, descriptions }: Props) => {
+const Hero = ({ greeting, name, title, descriptions }: Props) => {
 	const { breakpoints, spacing } = useTheme();
 	const mdUp = useMediaQuery(breakpoints.up("md"));
 
@@ -44,7 +44,7 @@ const Hero = ({ greeting, name, headline, descriptions }: Props) => {
 							color="primary.light"
 							paragraph
 						>
-							{headline}
+							{title}
 						</Typography>
 						{descriptions?.map((line: string, index: number) => (
 							<Typography key={`hero-description-${index}`} variant="h6">

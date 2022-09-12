@@ -24,10 +24,10 @@ export interface IProfile {
 }
 
 export interface IHero {
-	greeting: string;
+	greeting?: string;
 	name: string;
-	headline: string;
-	descriptions: string[];
+	title: string;
+	descriptions?: string[];
 }
 
 export interface IAbout {
