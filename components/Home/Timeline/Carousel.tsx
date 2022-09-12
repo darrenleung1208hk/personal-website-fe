@@ -11,7 +11,9 @@ import {
 	ListItem,
 	ListItemIcon,
 	ListItemText,
+	Theme,
 	Tooltip,
+	useMediaQuery,
 } from "@mui/material";
 import format from "date-fns/format";
 import "swiper/css";
@@ -27,9 +29,16 @@ const getWebsiteFavicon = (domain: string, size = 16) =>
 	`https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`;
 
 const Timeline = ({ data }: Props) => {
+	const xlUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("xl"));
+
 	return (
 		<Box pt={2}>
-			<Swiper slidesPerView={3} spaceBetween={24} centeredSlides grabCursor>
+			<Swiper
+				slidesPerView={xlUp ? 3 : 2}
+				spaceBetween={24}
+				centeredSlides
+				grabCursor
+			>
 				{data?.map(
 					(
 						{ title, organization, startDate, endDate, descriptions },
@@ -46,7 +55,7 @@ const Timeline = ({ data }: Props) => {
 								: formattedStartDate;
 						return (
 							<SwiperSlide key={`timeline-${index1}`}>
-								<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
+								<Card sx={{ m: 2, p: 2, height: "500px" }} raised>
 									<CardHeader
 										title={title}
 										titleTypographyProps={{

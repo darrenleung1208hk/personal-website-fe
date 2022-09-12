@@ -8,7 +8,7 @@ type Props = {
 
 const Experience = ({ data }: Props) => {
 	return (
-		<Box id="timeline" py={12}>
+		<Box id="timeline" py={{ xs: 4, md: 12 }}>
 			<Typography
 				variant="h3"
 				fontWeight={700}
@@ -18,7 +18,9 @@ const Experience = ({ data }: Props) => {
 			>
 				Timeline.
 			</Typography>
-			<Carousel data={data} />
+			<Box display={{ xs: "none", md: "block" }}>
+				<Carousel data={data} />
+			</Box>
 		</Box>
 	);
 };
