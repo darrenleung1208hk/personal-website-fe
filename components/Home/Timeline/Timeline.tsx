@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { IExperience } from "../../../contentful";
 import Accordion from "./Accordions";
 import Carousel from "./Carousel";
@@ -23,7 +23,9 @@ const Experience = ({ data }: Props) => {
 				<Carousel data={data} />
 			</Box>
 			<Box display={{ xs: "block", md: "none" }}>
-				<Accordion data={data} />
+				<Container>
+					<Accordion data={data} />
+				</Container>
 			</Box>
 		</Box>
 	);
