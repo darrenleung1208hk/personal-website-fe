@@ -2,8 +2,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
+import React from "react";
 
-const Footer = () => {
+type Props = {
+	linkedin: string;
+	email: string;
+	github: string;
+};
+
+const Footer: React.FC<Props> = ({ linkedin, email, github }) => {
 	return (
 		<Box bgcolor="primary.dark" color="#fff" py={{ xs: 6, md: 2 }}>
 			<Container>
@@ -31,13 +38,13 @@ const Footer = () => {
 						container
 						justifyContent={{ xs: "center", md: "flex-end" }}
 					>
-						<IconButton>
+						<IconButton href={linkedin} target="_blank">
 							<LinkedInIcon sx={{ color: "#fff", fontSize: "36px" }} />
 						</IconButton>
-						<IconButton>
+						<IconButton href={`mailto:${email}`}>
 							<EmailIcon sx={{ color: "#fff", fontSize: "36px" }} />
 						</IconButton>
-						<IconButton>
+						<IconButton href={github} target="_blank">
 							<GitHubIcon sx={{ color: "#fff", fontSize: "36px" }} />
 						</IconButton>
 					</Grid>

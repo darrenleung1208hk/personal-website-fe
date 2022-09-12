@@ -60,7 +60,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<NavigationDrawer drawerItems={routes} />
 			<AppBar navItems={routes} />
 			<Component {...pageProps} />
-			<Footer />
+			<Footer
+				linkedin={_appProps.linkedin}
+				email={_appProps.email}
+				github={_appProps.github}
+			/>
 		</ThemeProvider>
 	);
 }
