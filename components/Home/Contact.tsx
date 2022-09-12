@@ -4,7 +4,7 @@ import { IContact } from "../../contentful";
 
 interface Props extends IContact {}
 
-const Contact = ({ description }: Props) => {
+const Contact = ({ conclusion, email }: Props) => {
 	return (
 		<Box
 			id="contact"
@@ -25,7 +25,7 @@ const Contact = ({ description }: Props) => {
 					Get in Touch.
 				</Typography>
 				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
-					{description}
+					{conclusion}
 				</Typography>
 				<Box pt={2} textAlign="center">
 					<Button
@@ -36,7 +36,7 @@ const Contact = ({ description }: Props) => {
 						startIcon={<EmailIcon />}
 						sx={{ borderRadius: "32px" }}
 						component="a"
-						href="mailto:leungyatlong1208@gmail.com"
+						href={`mailto:${email}`}
 					>
 						Let&apos;s Talk
 					</Button>

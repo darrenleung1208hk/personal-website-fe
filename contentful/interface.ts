@@ -35,10 +35,11 @@ export interface IHero {
 }
 
 export interface IAbout {
-	description: string;
+	introduction: string;
 	skills: string[];
 }
 
 export interface IContact {
-	description: string;
+	conclusion: string;
+	email: string;
 }
