@@ -17,6 +17,7 @@ const profileQueryFragment = `
     items {
 			name
       title
+      greeting
       skills
       email
       github

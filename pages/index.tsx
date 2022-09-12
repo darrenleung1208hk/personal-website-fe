@@ -36,7 +36,7 @@ const Home: NextPage<Props> = ({
 export async function getStaticProps() {
 	const { experience = null, profile = null } = await getHomePageEntries();
 
-	const heroProps = _.pick(profile, ["name", "title"]);
+	const heroProps = _.pick(profile, ["name", "title", "greeting"]);
 	const aboutProps = _.pick(profile, ["introduction", "skills"]);
 	const contactProps = _.pick(profile, ["conclusion", "email"]);
 
