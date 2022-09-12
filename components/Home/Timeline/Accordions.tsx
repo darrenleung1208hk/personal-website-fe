@@ -11,7 +11,9 @@ import {
 	ListItemText,
 	Stack,
 	Typography,
+	Link,
 } from "@mui/material";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { IExperience } from "../../../contentful";
 import { getPositionPeriod, getWebsiteFavicon } from "./utils";
 
@@ -23,8 +25,8 @@ const Accordions = ({ data }: Props) => {
 	return (
 		<Box>
 			{data?.map(
-				({ title, organization, startDate, endDate, descriptions }, index) => (
-					<Accordion>
+				({ title, organization, startDate, endDate, descriptions }, index1) => (
+					<Accordion key={`timeline-${index1}`} elevation={0}>
 						<AccordionSummary expandIcon={<ExpandMoreIcon />}>
 							<Stack direction="row" alignItems="center" spacing={2}>
 								<Avatar src={getWebsiteFavicon(organization.website)} />
