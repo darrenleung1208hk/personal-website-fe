@@ -39,7 +39,11 @@ const Accordions = ({ data }: Props) => {
 										{title}
 									</Typography>
 									<Typography variant="subtitle2" color="text.secondary">
-										<Link href={organization.website} target="_blank">
+										<Link
+											href={organization.website}
+											target="_blank"
+											underline="hover"
+										>
 											{organization.name}
 										</Link>
 										, {getPositionPeriod(startDate, endDate)}
