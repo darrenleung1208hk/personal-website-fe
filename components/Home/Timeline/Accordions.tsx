@@ -33,7 +33,10 @@ const Accordions = ({ data }: Props) => {
 										{title}
 									</Typography>
 									<Typography variant="subtitle2" color="text.secondary">
-										{organization.name}, {getPositionPeriod(startDate, endDate)}
+										<Link href={organization.website} target="_blank">
+											{organization.name}
+										</Link>
+										, {getPositionPeriod(startDate, endDate)}
 									</Typography>
 								</Box>
 							</Stack>
