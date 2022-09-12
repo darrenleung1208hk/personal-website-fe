@@ -31,7 +31,10 @@ const Timeline = ({ data }: Props) => {
 		<Box pt={2}>
 			<Swiper slidesPerView={3} spaceBetween={24} centeredSlides grabCursor>
 				{data?.map(
-					({ title, organization, startDate, endDate, descriptions }) => {
+					(
+						{ title, organization, startDate, endDate, descriptions },
+						index1
+					) => {
 						const dateFormat = "yyyy";
 						const formattedStartDate = format(new Date(startDate), dateFormat);
 						const formattedEndDate = endDate
@@ -42,7 +45,7 @@ const Timeline = ({ data }: Props) => {
 								? `${formattedStartDate} - ${formattedEndDate}`
 								: formattedStartDate;
 						return (
-							<SwiperSlide>
+							<SwiperSlide key={`timeline-${index1}`}>
 								<Card sx={{ m: 2, p: 2, minHeight: "500px" }} raised>
 									<CardHeader
 										title={title}
@@ -76,8 +79,13 @@ const Timeline = ({ data }: Props) => {
 									/>
 									<CardContent>
 										<List>
-											{descriptions?.map((item) => (
-												<ListItem dense disableGutters alignItems="flex-start">
+											{descriptions?.map((item, index2) => (
+												<ListItem
+													key={`timeline-${index1}-description-${index2}`}
+													dense
+													disableGutters
+													alignItems="flex-start"
+												>
 													<ListItemIcon sx={{ minWidth: "40px" }}>
 														<ArrowRightIcon sx={{ color: "primary.main" }} />
 													</ListItemIcon>
