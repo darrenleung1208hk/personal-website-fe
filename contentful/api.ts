@@ -12,47 +12,35 @@ async function fetchGraphQL(query: string) {
 	).then((response) => response.json());
 }
 
-const heroCollectionQueryFragment = `
-  heroCollection(order: sys_publishedAt_DESC, limit: 1) {
+const profileQueryFragment = `
+  profileCollection(order: sys_publishedAt_DESC, limit: 1) {
     items {
+			name
+      title
       greeting
-      name
-      headline
-      descriptions
+      shortIntroduction
+      skills
+      email
+      github
+      linkedin
+      introduction
+      conclusion
     }
   }
 `;
 
-const aboutCollectionQueryFragement = `
-  aboutCollection(order: sys_publishedAt_DESC, limit: 1) {
+const experienceQueryFragement = `
+  positionCollection(order: startDate_DESC) {
     items {
-      description
-    }
-  }
-`;
-
-const workExperienceCollectionQueryFragment = `
-  workExperienceCollection(order: startDate_DESC) {
-    items {
-      jobTitle
-      companyName
-      companyWebsite
-      jobLocation
+      title
       startDate
       endDate
-      jobDescriptions: jobDescriptionsCollection {
-        items {
-          payload
-        }
-			}
-    }
-  }
-`;
-
-const contactCollectionQueryFragement = `
-  contactCollection(order: sys_publishedAt_DESC, limit: 1) {
-    items {
-      description
+      descriptions
+      organization {
+        name
+        website
+        location
+      }
     }
   }
 `;
@@ -60,16 +48,12 @@ const contactCollectionQueryFragement = `
 export async function getHomePageEntries() {
 	const { data } = await fetchGraphQL(`
     query {
-      ${heroCollectionQueryFragment}
-      ${workExperienceCollectionQueryFragment}
-      ${aboutCollectionQueryFragement}
-      ${contactCollectionQueryFragement}
+      ${experienceQueryFragement}
+      ${profileQueryFragment}
     }
   `);
 	return {
-		hero: data?.heroCollection?.items[0],
-		workExperience: data?.workExperienceCollection?.items,
-		about: data?.aboutCollection?.items[0],
-		contact: data?.contactCollection?.items[0],
+		experience: data?.positionCollection?.items,
+		profile: data?.profileCollection?.items[0],
 	};
 }

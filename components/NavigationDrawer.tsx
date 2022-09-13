@@ -1,17 +1,20 @@
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
+	AppBar,
 	Box,
 	Drawer,
 	IconButton,
 	List,
 	ListItem,
 	ListItemButton,
+	Toolbar,
 	Typography,
+	useScrollTrigger,
 	useTheme,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 type Props = {
 	drawerItems: {
@@ -23,6 +26,7 @@ type Props = {
 const NavigationDrawer = ({ drawerItems }: Props) => {
 	const { spacing } = useTheme();
 	const router = useRouter();
+	const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
 	const [drawerOpen, setDrawerOpen] = useState(false);
 
 	const handleClick = (href: string) => {
@@ -31,30 +35,23 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 	};
 
 	return (
-		<Fragment>
-			<Box display={{ xs: "block", sm: "none" }} p={4} />
-			<Box
-				width="52px"
-				height="52px"
-				bgcolor="white"
-				display={{ xs: "block", sm: "none" }}
-				position="fixed"
-				top={spacing(2)}
-				right={spacing(2)}
-				zIndex="appBar"
-				borderRadius="36px"
-			>
-				<IconButton onClick={() => setDrawerOpen(true)}>
-					<MenuIcon
-						sx={{ color: "primary.main", width: "36px", height: "36px" }}
-					/>
-				</IconButton>
-			</Box>
+		<Box display={{ xs: "block", sm: "none" }}>
+			<Toolbar />
+			<AppBar elevation={trigger ? 4 : 0} color="inherit" position="fixed">
+				<Toolbar
+					sx={{ display: "flex", justifyContent: "flex-end", height: "64px" }}
+				>
+					<IconButton onClick={() => setDrawerOpen(true)}>
+						<MenuIcon
+							sx={{ color: "primary.main", width: "36px", height: "36px" }}
+						/>
+					</IconButton>
+				</Toolbar>
+			</AppBar>
 			<Drawer
 				open={drawerOpen}
 				anchor="right"
 				onClose={() => setDrawerOpen(false)}
-				sx={{ display: { xs: "block", sm: "none" } }}
 			>
 				<IconButton
 					sx={{
@@ -81,7 +78,7 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 					))}
 				</List>
 			</Drawer>
-		</Fragment>
+		</Box>
 	);
 };
 

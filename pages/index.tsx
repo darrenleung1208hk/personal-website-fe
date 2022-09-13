@@ -1,42 +1,66 @@
 import { Box } from "@mui/material";
+import _ from "lodash";
 import type { NextPage } from "next";
-import { About, Contact, Experience, Hero } from "../components/Home";
+import { About, Contact, Hero, Timeline } from "../components/Home";
 import {
 	getHomePageEntries,
 	IAbout,
 	IContact,
 	IHero,
-	IJobExperience,
+	ITimeline,
 } from "../contentful";
 
 type Props = {
-	workExperience: IJobExperience[];
-	hero: IHero;
-	about: IAbout;
-	contact: IContact;
+	timelineProps: ITimeline;
+	heroProps: IHero;
+	aboutProps: IAbout;
+	contactProps: IContact;
 };
 
-const Home: NextPage<Props> = ({ hero, about, workExperience, contact }) => {
+const Home: NextPage<Props> = ({
+	timelineProps,
+	heroProps,
+	aboutProps,
+	contactProps,
+}: Props) => {
 	return (
 		<Box>
-			<Hero {...hero} />
-			<About {...about} />
-			<Experience data={workExperience} />
-			<Contact {...contact} />
+			<Hero {...heroProps} />
+			<About {...aboutProps} />
+			<Timeline {...timelineProps} />
+			<Contact {...contactProps} />
 		</Box>
 	);
 };
 
 export async function getStaticProps() {
-	const {
-		hero = null,
-		about = null,
-		workExperience = null,
-		contact = null,
-	} = await getHomePageEntries();
+	const { experience = null, profile = null } = await getHomePageEntries();
+
+	const heroProps = _.pick(profile, [
+		"name",
+		"title",
+		"greeting",
+		"shortIntroduction",
+	]);
+	const aboutProps = _.pick(profile, ["introduction", "skills"]);
+	const contactProps = _.pick(profile, ["conclusion", "email"]);
+	const _appProps = _.pick(profile, [
+		"name",
+		"title",
+		"shortIntroduction",
+		"email",
+		"github",
+		"linkedin",
+	]);
 
 	return {
-		props: { hero, about, workExperience, contact },
+		props: {
+			timelineProps: { data: experience },
+			heroProps,
+			aboutProps,
+			contactProps,
+			_appProps,
+		},
 	};
 }
 
