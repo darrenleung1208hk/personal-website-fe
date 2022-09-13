@@ -14,7 +14,13 @@ interface Props extends IHero {}
 
 const heroImageBorderRadius = 2;
 
-const Hero = ({ greeting, name, title, shortIntroduction }: Props) => {
+const Hero = ({
+	greeting,
+	name,
+	title,
+	shortIntroduction,
+	heroImage,
+}: Props) => {
 	const { breakpoints, spacing } = useTheme();
 	const mdUp = useMediaQuery(breakpoints.up("md"));
 
@@ -61,10 +67,10 @@ const Hero = ({ greeting, name, title, shortIntroduction }: Props) => {
 							}}
 						>
 							<Image
-								src="/hero.jpg"
+								src={heroImage?.url}
 								alt="hero-image"
-								width={1600}
-								height={1200}
+								width={heroImage?.width || 1600}
+								height={heroImage?.height || 1200}
 								layout="responsive"
 								style={{ borderRadius: spacing(heroImageBorderRadius) }}
 							/>

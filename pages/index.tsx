@@ -41,6 +41,7 @@ export async function getStaticProps() {
 		"title",
 		"greeting",
 		"shortIntroduction",
+		"heroImage",
 	]);
 	const aboutProps = _.pick(profile, ["introduction", "skills"]);
 	const contactProps = _.pick(profile, ["conclusion", "email"]);
