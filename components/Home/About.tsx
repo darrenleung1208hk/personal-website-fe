@@ -3,7 +3,7 @@ import { IAbout } from "../../contentful";
 
 interface Props extends IAbout {}
 
-const About = ({ description, skills }: Props) => {
+const About = ({ introduction, skills }: Props) => {
 	return (
 		<Box
 			id="about"
@@ -24,10 +24,10 @@ const About = ({ description, skills }: Props) => {
 					About Me.
 				</Typography>
 				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
-					{description}
+					{introduction}
 				</Typography>
 				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
-					Here&apos;s my tech stack:
+					Here&apos;s my recent tech stack:
 				</Typography>
 				<Grid container justifyContent="center" spacing={1}>
 					{skills?.map((skill, index) => (

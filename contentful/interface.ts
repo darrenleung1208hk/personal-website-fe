@@ -12,18 +12,36 @@ export interface IExperience {
 	organization: IOrganization;
 }
 
-export interface IHero {
-	greeting: string;
+export interface ITimeline {
+	data: IExperience[];
+}
+
+export interface IProfile {
 	name: string;
-	headline: string;
-	descriptions: string[];
+	title: string;
+	greeting: string;
+	shortIntroduction: string[];
+	skills: string[];
+	email: string;
+	github: string;
+	linkedin: string;
+	introduction: string;
+	conclusion: string;
+}
+
+export interface IHero {
+	greeting?: string;
+	name: string;
+	title: string;
+	shortIntroduction?: string[];
 }
 
 export interface IAbout {
-	description: string;
+	introduction: string;
 	skills: string[];
 }
 
 export interface IContact {
-	description: string;
+	conclusion: string;
+	email: string;
 }
