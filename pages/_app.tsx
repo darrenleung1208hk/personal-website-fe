@@ -13,7 +13,7 @@ const routes = [
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const title = `${pageProps?._appProps?.name} | ${pageProps?._appProps?.title}`;
+	const title = `${pageProps?._appProps?.name} - ${pageProps?._appProps?.title}`;
 	const description = pageProps?._appProps?.shortIntroduction?.join(" ");
 
 	return (
