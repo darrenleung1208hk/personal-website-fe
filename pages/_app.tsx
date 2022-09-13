@@ -13,16 +13,15 @@ const routes = [
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const { _appProps } = pageProps;
-	const title = `${_appProps.name} | ${_appProps.title}`;
-	const description = _appProps.shortIntroduction?.join(" ");
+	const title = `${pageProps?._appProps?.name} | ${pageProps?._appProps?.title}`;
+	const description = pageProps?._appProps?.shortIntroduction?.join(" ");
 
 	return (
 		<ThemeProvider theme={theme}>
 			<Head>
 				<title>{title}</title>
 				<meta property="og:title" content={title} />
-				<meta name="author" content={_appProps.name} />
+				<meta name="author" content={pageProps?._appProps?.name} />
 				<meta name="description" content={description} />
 				<meta property="og:description" content={description} />
 				<meta property="og:url" content="https://darrenleung.io" />
@@ -61,9 +60,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<AppBar navItems={routes} />
 			<Component {...pageProps} />
 			<Footer
-				linkedin={_appProps.linkedin}
-				email={_appProps.email}
-				github={_appProps.github}
+				linkedin={pageProps?._appProps?.linkedin}
+				email={pageProps?._appProps?.email}
+				github={pageProps?._appProps?.github}
 			/>
 		</ThemeProvider>
 	);
