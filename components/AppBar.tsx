@@ -5,8 +5,7 @@ import {
 	Button,
 	Container,
 	IconButton,
-	Menu,
-	MenuItem,
+	Popover,
 	Stack,
 	Toolbar,
 	Typography,
@@ -67,15 +66,25 @@ const AppBar = ({ navItems }: Props) => {
 							<IconButton onClick={handleClick}>
 								<MenuIcon color="primary" />
 							</IconButton>
-							<Menu open={menuOpen} onClose={handleClose} anchorEl={anchorEl}>
+							<Popover
+								open={menuOpen}
+								onClose={handleClose}
+								anchorEl={anchorEl}
+								anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+								PaperProps={{ sx: { width: "60%", p: 2 } }}
+							>
 								{navItems.map(({ name, href }) => (
-									<MenuItem key={name} onClick={handleClose}>
-										<Link href={href}>
+									<Link href={href} key={name} passHref>
+										<Button
+											component="a"
+											onClick={handleClose}
+											sx={{ display: "block" }}
+										>
 											<Typography>{name}</Typography>
-										</Link>
-									</MenuItem>
+										</Button>
+									</Link>
 								))}
-							</Menu>
+							</Popover>
 						</Box>
 					</Toolbar>
 				</Container>
