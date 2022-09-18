@@ -1,7 +1,7 @@
 import "@fontsource/poppins";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
-import { AppBar, Footer, NavigationDrawer } from "../components";
+import { AppBar, Footer } from "../components";
 import "../styles/globals.css";
 import theme from "../styles/theme";
 import Head from "next/head";
@@ -57,7 +57,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 				></link>
 			</Head>
 			<CssBaseline />
-			<NavigationDrawer drawerItems={routes} />
 			<AppBar navItems={routes} />
 			<BackToTop />
 			<Component {...pageProps} />
