@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Logo from "./Logo";
 
 type Props = {
 	drawerItems: {
@@ -39,8 +40,13 @@ const NavigationDrawer = ({ drawerItems }: Props) => {
 			<Toolbar />
 			<AppBar elevation={trigger ? 4 : 0} color="inherit" position="fixed">
 				<Toolbar
-					sx={{ display: "flex", justifyContent: "flex-end", height: "64px" }}
+					sx={{
+						display: "flex",
+						justifyContent: "space-between",
+						height: "64px",
+					}}
 				>
+					<Logo />
 					<IconButton onClick={() => setDrawerOpen(true)}>
 						<MenuIcon
 							sx={{ color: "primary.main", width: "36px", height: "36px" }}
