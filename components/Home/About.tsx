@@ -32,7 +32,7 @@ const About = ({ introduction, skills }: Props) => {
 				<Grid container justifyContent="center" spacing={1}>
 					{skills?.map((skill, index) => (
 						<Grid key={`skill-${index}`} item>
-							<Chip label={skill} color="secondary" sx={{ boxShadow: 4 }} />
+							<Chip label={skill} color="secondary" sx={{ boxShadow: 2 }} />
 						</Grid>
 					))}
 				</Grid>
