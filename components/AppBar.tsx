@@ -9,6 +9,7 @@ import {
 	useScrollTrigger,
 } from "@mui/material";
 import Link from "next/link";
+import Logo from "./Logo";
 
 type Props = {
 	navItems: {
@@ -27,8 +28,13 @@ const AppBar = ({ navItems }: Props) => {
 				<Container>
 					<Toolbar
 						disableGutters
-						sx={{ display: "flex", justifyContent: "flex-end" }}
+						sx={{
+							display: "flex",
+							justifyContent: "space-between",
+							alignItems: "center",
+						}}
 					>
+						<Logo />
 						<Stack direction="row" spacing={1}>
 							{navItems.map(({ name, href }) => (
 								<Link href={href} key={href}>
