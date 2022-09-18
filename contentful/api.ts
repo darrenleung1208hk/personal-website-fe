@@ -25,6 +25,12 @@ const profileQueryFragment = `
       linkedin
       introduction
       conclusion
+      heroImage {
+        title
+        width
+        height
+        url
+      }
     }
   }
 `;

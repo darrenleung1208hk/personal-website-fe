@@ -16,6 +16,13 @@ export interface ITimeline {
 	data: IExperience[];
 }
 
+export interface IImageData {
+	title: string;
+	width: number;
+	height: number;
+	url: string;
+}
+
 export interface IProfile {
 	name: string;
 	title: string;
@@ -27,6 +34,7 @@ export interface IProfile {
 	linkedin: string;
 	introduction: string;
 	conclusion: string;
+	heroImage: IImageData;
 }
 
 export interface IHero {
@@ -34,6 +42,7 @@ export interface IHero {
 	name: string;
 	title: string;
 	shortIntroduction?: string[];
+	heroImage: IImageData;
 }
 
 export interface IAbout {
