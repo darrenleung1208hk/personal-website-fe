@@ -29,7 +29,6 @@ const Contact = ({ conclusion, email }: Props) => {
 				</Typography>
 				<Box pt={2} textAlign="center">
 					<Button
-						disableElevation
 						variant="contained"
 						color="secondary"
 						size="large"
