@@ -15,16 +15,10 @@ const Contact = ({ conclusion, email }: Props) => {
 			}}
 		>
 			<Container>
-				<Typography
-					variant="h3"
-					fontWeight={700}
-					color="#fff"
-					textAlign="center"
-					paragraph
-				>
+				<Typography variant="h3" color="#fff" textAlign="center" paragraph>
 					Get in Touch.
 				</Typography>
-				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
+				<Typography align="center" color="#fff" paragraph>
 					{conclusion}
 				</Typography>
 				<Box pt={2} textAlign="center">

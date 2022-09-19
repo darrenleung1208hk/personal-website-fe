@@ -27,7 +27,7 @@ const Footer: React.FC<Props> = ({ linkedin, email, github }) => {
 						container
 						justifyContent={{ xs: "center", md: "flex-start" }}
 					>
-						<Typography variant="body2">
+						<Typography variant="body2" fontFamily="Ubuntu">
 							© {new Date().getFullYear()} Darren Leung. All Rights Reserved.
 						</Typography>
 					</Grid>

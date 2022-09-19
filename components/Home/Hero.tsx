@@ -35,25 +35,17 @@ const Hero = ({
 					spacing={{ xs: 3, sm: 0 }}
 				>
 					<Grid item xs={12} sm={6} md={7}>
-						<Typography variant="h5">{greeting}</Typography>
-						<Typography
-							variant={mdUp ? "h2" : "h3"}
-							fontWeight={700}
-							component="h1"
-							color="primary.main"
-						>
+						<Typography variant="h5" color="secondary.contrastText">
+							{greeting}
+						</Typography>
+						<Typography variant="h1" color="primary.main">
 							{name}
 						</Typography>
-						<Typography
-							variant={mdUp ? "h4" : "h5"}
-							fontWeight={700}
-							color="primary.light"
-							paragraph
-						>
+						<Typography variant="h2" color="primary.light" paragraph>
 							{title}
 						</Typography>
 						{shortIntroduction?.map((line: string, index: number) => (
-							<Typography key={`hero-description-${index}`} variant="h6">
+							<Typography key={`hero-description-${index}`} variant="h5">
 								{line}
 							</Typography>
 						))}

@@ -10,7 +10,6 @@ import {
 	MenuItem,
 	Stack,
 	Toolbar,
-	Typography,
 	useScrollTrigger,
 	useTheme,
 } from "@mui/material";
@@ -66,9 +65,7 @@ const AppBar = ({ navItems }: Props) => {
 						>
 							{navItems.map(({ name, href }) => (
 								<Link href={href} key={href}>
-									<Button disableElevation>
-										<Typography>{name}</Typography>
-									</Button>
+									<Button size="large">{name}</Button>
 								</Link>
 							))}
 						</Stack>
