@@ -17,10 +17,10 @@ const About = ({ introduction, skills }: Props) => {
 				<Typography variant="h3" color="#fff" align="center" paragraph>
 					About Me.
 				</Typography>
-				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
+				<Typography align="center" color="#fff" paragraph>
 					{introduction}
 				</Typography>
-				<Typography variant="subtitle1" align="center" color="#fff" paragraph>
+				<Typography align="center" color="#fff" paragraph>
 					Here&apos;s my recent tech stack:
 				</Typography>
 				<Grid container justifyContent="center" spacing={1}>
