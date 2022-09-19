@@ -41,11 +41,11 @@ const Hero = ({
 						<Typography variant="h1" color="primary.main">
 							{name}
 						</Typography>
-						<Typography color="primary.light" paragraph>
+						<Typography variant="h2" color="primary.light" paragraph>
 							{title}
 						</Typography>
 						{shortIntroduction?.map((line: string, index: number) => (
-							<Typography key={`hero-description-${index}`} variant="h6">
+							<Typography key={`hero-description-${index}`} variant="h5">
 								{line}
 							</Typography>
 						))}
