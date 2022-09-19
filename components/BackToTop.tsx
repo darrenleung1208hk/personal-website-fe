@@ -2,7 +2,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { Fab, useScrollTrigger } from "@mui/material";
 
 const BackToTop = () => {
-	const trigger = useScrollTrigger();
+	const trigger = useScrollTrigger({ disableHysteresis: true });
 
 	return (
 		<Fab
