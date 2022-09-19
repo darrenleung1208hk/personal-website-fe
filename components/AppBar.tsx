@@ -1,18 +1,17 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import {
 	AppBar as MuiAppBar,
 	Box,
 	Button,
 	Container,
-	IconButton,
 	Popover,
 	Stack,
 	Toolbar,
 	Typography,
 	useScrollTrigger,
 } from "@mui/material";
+import { Squeeze as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
 type Props = {
@@ -24,15 +23,20 @@ type Props = {
 
 const AppBar = ({ navItems }: Props) => {
 	const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const menuOpen = Boolean(anchorEl);
+	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+	const [menuOpen, setMenuOpen] = useState(false);
 
-	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-		setAnchorEl(event.currentTarget);
+	useEffect(() => {
+		const hamburgerEl = document.getElementById("hamburger");
+		setAnchorEl(hamburgerEl);
+	}, []);
+
+	const handleClick = () => {
+		setMenuOpen((prev) => !prev);
 	};
 
 	const handleClose = () => {
-		setAnchorEl(null);
+		setMenuOpen(false);
 	};
 
 	return (
@@ -63,9 +67,9 @@ const AppBar = ({ navItems }: Props) => {
 							))}
 						</Stack>
 						<Box display={{ xs: "block", sm: "none" }}>
-							<IconButton onClick={handleClick}>
-								<MenuIcon color="primary" />
-							</IconButton>
+							<Box id="hamburger">
+								<Hamburger toggled={menuOpen} toggle={handleClick} />
+							</Box>
 							<Popover
 								open={menuOpen}
 								onClose={handleClose}
