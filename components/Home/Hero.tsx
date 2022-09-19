@@ -38,18 +38,10 @@ const Hero = ({
 						<Typography variant="h5" color="secondary.contrastText">
 							{greeting}
 						</Typography>
-						<Typography
-							variant={mdUp ? "h2" : "h3"}
-							component="h1"
-							color="primary.main"
-						>
+						<Typography variant="h1" color="primary.main">
 							{name}
 						</Typography>
-						<Typography
-							variant={mdUp ? "h4" : "h5"}
-							color="primary.light"
-							paragraph
-						>
+						<Typography color="primary.light" paragraph>
 							{title}
 						</Typography>
 						{shortIntroduction?.map((line: string, index: number) => (
