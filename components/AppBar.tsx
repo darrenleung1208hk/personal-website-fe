@@ -93,7 +93,7 @@ const AppBar = ({ navItems }: Props) => {
 								}}
 							>
 								{navItems.map(({ name, href }) => (
-									<Link href={href} key={name} passHref>
+									<Link href={href} key={name} passHref replace>
 										<MenuItem component="a" onClick={handleClose}>
 											<ListItemIcon>
 												<TagRoundedIcon color="primary" />
