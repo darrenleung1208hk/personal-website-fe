@@ -8,6 +8,7 @@ import {
 	Toolbar,
 	Typography,
 	useScrollTrigger,
+	useTheme,
 } from "@mui/material";
 import { Squeeze as Hamburger } from "hamburger-react";
 import Link from "next/link";
@@ -23,6 +24,7 @@ type Props = {
 
 const AppBar = ({ navItems }: Props) => {
 	const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
+	const { palette } = useTheme();
 	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -68,7 +70,13 @@ const AppBar = ({ navItems }: Props) => {
 						</Stack>
 						<Box display={{ xs: "block", sm: "none" }}>
 							<Box id="hamburger">
-								<Hamburger toggled={menuOpen} toggle={handleClick} />
+								<Hamburger
+									toggled={menuOpen}
+									toggle={handleClick}
+									rounded
+									size={20}
+									color={palette.primary.main}
+								/>
 							</Box>
 							<Popover
 								open={menuOpen}
