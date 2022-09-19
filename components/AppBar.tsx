@@ -3,12 +3,16 @@ import {
 	Box,
 	Button,
 	Container,
+	Popover,
 	Stack,
 	Toolbar,
 	Typography,
 	useScrollTrigger,
+	useTheme,
 } from "@mui/material";
+import { Squeeze as Hamburger } from "hamburger-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
 type Props = {
@@ -20,9 +24,25 @@ type Props = {
 
 const AppBar = ({ navItems }: Props) => {
 	const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
+	const { palette } = useTheme();
+	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	useEffect(() => {
+		const hamburgerEl = document.getElementById("hamburger");
+		setAnchorEl(hamburgerEl);
+	}, []);
+
+	const handleClick = () => {
+		setMenuOpen((prev) => !prev);
+	};
+
+	const handleClose = () => {
+		setMenuOpen(false);
+	};
 
 	return (
-		<Box display={{ xs: "none", sm: "block" }}>
+		<Box>
 			<Toolbar />
 			<MuiAppBar elevation={trigger ? 4 : 0} color="inherit" position="fixed">
 				<Container>
@@ -35,7 +55,11 @@ const AppBar = ({ navItems }: Props) => {
 						}}
 					>
 						<Logo />
-						<Stack direction="row" spacing={1}>
+						<Stack
+							direction="row"
+							spacing={1}
+							display={{ xs: "none", sm: "block" }}
+						>
 							{navItems.map(({ name, href }) => (
 								<Link href={href} key={href}>
 									<Button disableElevation>
@@ -44,6 +68,36 @@ const AppBar = ({ navItems }: Props) => {
 								</Link>
 							))}
 						</Stack>
+						<Box display={{ xs: "block", sm: "none" }}>
+							<Box id="hamburger">
+								<Hamburger
+									toggled={menuOpen}
+									toggle={handleClick}
+									rounded
+									size={20}
+									color={palette.primary.main}
+								/>
+							</Box>
+							<Popover
+								open={menuOpen}
+								onClose={handleClose}
+								anchorEl={anchorEl}
+								anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+								PaperProps={{ sx: { width: "60%", p: 2 } }}
+							>
+								{navItems.map(({ name, href }) => (
+									<Link href={href} key={name} passHref>
+										<Button
+											component="a"
+											onClick={handleClose}
+											sx={{ display: "block" }}
+										>
+											<Typography>{name}</Typography>
+										</Button>
+									</Link>
+								))}
+							</Popover>
+						</Box>
 					</Toolbar>
 				</Container>
 			</MuiAppBar>
