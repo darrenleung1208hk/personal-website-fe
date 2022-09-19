@@ -24,7 +24,7 @@ const theme = createTheme({
 		h6: { fontSize: "1.25rem" },
 		body1: { fontFamily: "Inter" },
 		body2: { fontFamily: "Inter", fontSize: "0.8rem" },
-		button: { textTransform: "none", fontSize: "0.8rem" },
+		button: { textTransform: "none", fontSize: "1rem" },
 		caption: { fontSize: "0.64rem" },
 		overline: { fontSize: "0.64rem" },
 	},
