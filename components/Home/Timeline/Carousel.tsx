@@ -89,7 +89,10 @@ const Timeline = ({ data }: Props) => {
 													<ListItemIcon sx={{ minWidth: "40px" }}>
 														<ArrowRightIcon sx={{ color: "primary.main" }} />
 													</ListItemIcon>
-													<ListItemText primary={item} />
+													<ListItemText
+														primary={item}
+														primaryTypographyProps={{ variant: "body1" }}
+													/>
 												</ListItem>
 											))}
 										</List>
