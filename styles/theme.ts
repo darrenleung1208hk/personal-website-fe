@@ -15,7 +15,11 @@ const theme = createTheme({
 		},
 	},
 	typography: {
-		fontFamily: `Poppins`,
+		fontFamily: ["Ubuntu", "Inter"].join(","),
+		subtitle1: { fontFamily: "Inter" },
+		subtitle2: { fontFamily: "Inter" },
+		body1: { fontFamily: "Inter" },
+		body2: { fontFamily: "Inter" },
 		button: { textTransform: "none" },
 	},
 });
