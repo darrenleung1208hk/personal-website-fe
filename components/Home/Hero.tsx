@@ -35,7 +35,9 @@ const Hero = ({
 					spacing={{ xs: 3, sm: 0 }}
 				>
 					<Grid item xs={12} sm={6} md={7}>
-						<Typography variant="h5">{greeting}</Typography>
+						<Typography variant="h5" color="secondary.contrastText">
+							{greeting}
+						</Typography>
 						<Typography
 							variant={mdUp ? "h2" : "h3"}
 							component="h1"
