@@ -12,7 +12,6 @@ const Experience = ({ data }: Props) => {
 		<Box id="timeline" py={{ xs: 4, md: 12 }}>
 			<Typography
 				variant="h3"
-				fontWeight={700}
 				color="primary.main"
 				textAlign="center"
 				paragraph

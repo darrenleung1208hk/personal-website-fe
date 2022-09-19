@@ -14,13 +14,7 @@ const About = ({ introduction, skills }: Props) => {
 			}}
 		>
 			<Container>
-				<Typography
-					variant="h3"
-					fontWeight={700}
-					color="#fff"
-					align="center"
-					paragraph
-				>
+				<Typography variant="h3" color="#fff" align="center" paragraph>
 					About Me.
 				</Typography>
 				<Typography variant="subtitle1" align="center" color="#fff" paragraph>

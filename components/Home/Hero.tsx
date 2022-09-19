@@ -38,7 +38,6 @@ const Hero = ({
 						<Typography variant="h5">{greeting}</Typography>
 						<Typography
 							variant={mdUp ? "h2" : "h3"}
-							fontWeight={700}
 							component="h1"
 							color="primary.main"
 						>
@@ -46,7 +45,6 @@ const Hero = ({
 						</Typography>
 						<Typography
 							variant={mdUp ? "h4" : "h5"}
-							fontWeight={700}
 							color="primary.light"
 							paragraph
 						>
