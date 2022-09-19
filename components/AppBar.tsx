@@ -1,9 +1,13 @@
+import TagRoundedIcon from "@mui/icons-material/TagRounded";
 import {
 	AppBar as MuiAppBar,
 	Box,
 	Button,
 	Container,
-	Popover,
+	ListItemIcon,
+	ListItemText,
+	Menu,
+	MenuItem,
 	Stack,
 	Toolbar,
 	Typography,
@@ -78,25 +82,27 @@ const AppBar = ({ navItems }: Props) => {
 									color={palette.primary.main}
 								/>
 							</Box>
-							<Popover
+							<Menu
 								open={menuOpen}
 								onClose={handleClose}
 								anchorEl={anchorEl}
-								anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-								PaperProps={{ sx: { width: "60%", p: 2 } }}
+								sx={{
+									"& .MuiPaper-root": {
+										width: "60%",
+									},
+								}}
 							>
 								{navItems.map(({ name, href }) => (
 									<Link href={href} key={name} passHref>
-										<Button
-											component="a"
-											onClick={handleClose}
-											sx={{ display: "block" }}
-										>
-											<Typography>{name}</Typography>
-										</Button>
+										<MenuItem component="a" onClick={handleClose}>
+											<ListItemIcon>
+												<TagRoundedIcon color="primary" />
+											</ListItemIcon>
+											<ListItemText primary={name} />
+										</MenuItem>
 									</Link>
 								))}
-							</Popover>
+							</Menu>
 						</Box>
 					</Toolbar>
 				</Container>
