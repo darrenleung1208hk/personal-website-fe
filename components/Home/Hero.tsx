@@ -28,14 +28,14 @@ const Hero: React.FC<Props> = ({
 	return (
 		<Container
 			disableGutters={!smUp}
-			sx={{ pt: { sm: 6 }, pb: { xs: 4, sm: 12 } }}
+			sx={{ pt: { sm: 6 }, pb: { xs: 6, sm: 12 } }}
 		>
 			<Grid
 				container
 				direction={{ xs: "column-reverse", sm: "row" }}
 				alignItems="center"
 				justifyContent="space-between"
-				spacing={{ xs: 3, sm: 0 }}
+				spacing={{ xs: 4, sm: 0 }}
 			>
 				<Grid item xs={12} sm={6} md={7}>
 					<Container disableGutters={smUp}>
