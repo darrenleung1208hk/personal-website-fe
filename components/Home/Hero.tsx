@@ -1,5 +1,6 @@
 import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
+import React from "react";
 import { IHero } from "../../contentful";
 import SectionWrapper from "../SectionWrapper";
 
@@ -7,13 +8,13 @@ interface Props extends IHero {}
 
 const heroImageBorderRadius = 2;
 
-const Hero = ({
+const Hero: React.FC<Props> = ({
 	greeting,
 	name,
 	title,
 	shortIntroduction,
 	heroImage,
-}: Props) => {
+}) => {
 	const { spacing } = useTheme();
 
 	return (
