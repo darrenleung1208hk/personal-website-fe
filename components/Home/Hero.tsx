@@ -28,7 +28,7 @@ const Hero: React.FC<Props> = ({
 	return (
 		<Container
 			disableGutters={!smUp}
-			sx={{ pt: { sm: 6 }, pb: { xs: 4, sm: 10 } }}
+			sx={{ pt: { sm: 6 }, pb: { xs: 4, sm: 12 } }}
 		>
 			<Grid
 				container
