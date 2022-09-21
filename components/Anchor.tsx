@@ -3,13 +3,13 @@ import { CSSProperties } from "@mui/material/styles/createMixins";
 import React from "react";
 
 type Props = {
-	id: string;
+	tag: string;
 };
 
-const Anchor: React.FC<Props> = ({ id }) => {
+const Anchor: React.FC<Props> = ({ tag }) => {
 	return (
 		<Box
-			id={id}
+			id={tag}
 			component="span"
 			position="relative"
 			top={({ breakpoints, mixins }) => ({
