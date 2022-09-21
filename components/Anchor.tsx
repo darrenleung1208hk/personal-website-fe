@@ -1,4 +1,4 @@
-import { Box, Theme } from "@mui/material";
+import { Box } from "@mui/material";
 import { CSSProperties } from "@mui/material/styles/createMixins";
 import React from "react";
 
@@ -10,6 +10,7 @@ const Anchor: React.FC<Props> = ({ id }) => {
 	return (
 		<Box
 			id={id}
+			component="span"
 			position="relative"
 			top={({ breakpoints, mixins }) => ({
 				xs: `${-(mixins.toolbar.minHeight as number) || 0}px`,
