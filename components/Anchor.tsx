@@ -10,7 +10,6 @@ const Anchor: React.FC<Props> = ({ tag }) => {
 	return (
 		<Box
 			id={tag}
-			component="span"
 			position="relative"
 			top={({ breakpoints, mixins }) => ({
 				xs: `${-(mixins.toolbar.minHeight as number) || 0}px`,
