@@ -1,11 +1,4 @@
-import {
-	Box,
-	Grid,
-	Stack,
-	Typography,
-	useMediaQuery,
-	useTheme,
-} from "@mui/material";
+import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
 import { IHero } from "../../contentful";
 import SectionWrapper from "../SectionWrapper";
@@ -21,8 +14,7 @@ const Hero = ({
 	shortIntroduction,
 	heroImage,
 }: Props) => {
-	const { breakpoints, spacing } = useTheme();
-	const mdUp = useMediaQuery(breakpoints.up("md"));
+	const { spacing } = useTheme();
 
 	return (
 		<SectionWrapper>
@@ -54,7 +46,7 @@ const Hero = ({
 						<Box
 							sx={{
 								width: { xs: `calc(100vw - 32px)`, sm: "100%" },
-								borderRadius: spacing(heroImageBorderRadius),
+								borderRadius: ({ spacing }) => spacing(heroImageBorderRadius),
 								boxShadow: 12,
 							}}
 						>
