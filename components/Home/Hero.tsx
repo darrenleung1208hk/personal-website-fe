@@ -1,40 +1,44 @@
 import {
 	Box,
+	Container,
 	Grid,
-	Stack,
+	Theme,
 	Typography,
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
 import Image from "next/image";
+import React from "react";
 import { IHero } from "../../contentful";
-import SectionWrapper from "../SectionWrapper";
 
 interface Props extends IHero {}
 
 const heroImageBorderRadius = 2;
 
-const Hero = ({
+const Hero: React.FC<Props> = ({
 	greeting,
 	name,
 	title,
 	shortIntroduction,
 	heroImage,
-}: Props) => {
-	const { breakpoints, spacing } = useTheme();
-	const mdUp = useMediaQuery(breakpoints.up("md"));
+}) => {
+	const { spacing } = useTheme();
+	const smUp = useMediaQuery(({ breakpoints }: Theme) => breakpoints.up("sm"));
 
 	return (
-		<SectionWrapper>
-			<Stack minHeight="50vh" justifyContent="center">
-				<Grid
-					container
-					direction={{ xs: "column-reverse", sm: "row" }}
-					alignItems="center"
-					justifyContent="space-between"
-					spacing={{ xs: 3, sm: 0 }}
-				>
-					<Grid item xs={12} sm={6} md={7}>
+		<Container
+			disableGutters={!smUp}
+			sx={{ pt: { sm: 6 }, pb: { xs: 6, sm: 12 } }}
+		>
+			<Grid
+				container
+				direction={{ xs: "column-reverse", sm: "row" }}
+				alignItems="center"
+				justifyContent="space-between"
+				spacing={{ xs: 4, sm: 0 }}
+			>
+				<Grid item xs={12} sm={6} md={7}>
+					<Container disableGutters={smUp}>
 						<Typography variant="h5" color="secondary.contrastText">
 							{greeting}
 						</Typography>
@@ -49,28 +53,30 @@ const Hero = ({
 								{line}
 							</Typography>
 						))}
-					</Grid>
-					<Grid item xs={12} sm md>
-						<Box
-							sx={{
-								width: { xs: `calc(100vw - 32px)`, sm: "100%" },
-								borderRadius: spacing(heroImageBorderRadius),
-								boxShadow: 12,
-							}}
-						>
-							<Image
-								src={heroImage?.url}
-								alt="hero-image"
-								width={heroImage?.width || 1600}
-								height={heroImage?.height || 1200}
-								layout="responsive"
-								style={{ borderRadius: spacing(heroImageBorderRadius) }}
-							/>
-						</Box>
-					</Grid>
+					</Container>
 				</Grid>
-			</Stack>
-		</SectionWrapper>
+				<Grid item xs={12} sm md>
+					<Box
+						sx={({ spacing }) => ({
+							width: { xs: `calc(100vw)`, sm: "100%" },
+							borderRadius: { sm: spacing(heroImageBorderRadius) },
+							boxShadow: { sm: 12 },
+						})}
+					>
+						<Image
+							src={heroImage?.url}
+							alt="hero-image"
+							width={heroImage?.width || 1600}
+							height={heroImage?.height || 1200}
+							layout="responsive"
+							style={{
+								borderRadius: smUp ? spacing(heroImageBorderRadius) : 0,
+							}}
+						/>
+					</Box>
+				</Grid>
+			</Grid>
+		</Container>
 	);
 };
 
