@@ -1,4 +1,12 @@
-import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
+import {
+	Box,
+	Container,
+	Grid,
+	Theme,
+	Typography,
+	useMediaQuery,
+	useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import { IHero } from "../../contentful";
@@ -15,9 +23,13 @@ const Hero: React.FC<Props> = ({
 	heroImage,
 }) => {
 	const { spacing } = useTheme();
+	const smUp = useMediaQuery(({ breakpoints }: Theme) => breakpoints.up("sm"));
 
 	return (
-		<Container sx={{ pt: { sm: 6 }, pb: { xs: 4, sm: 10 } }}>
+		<Container
+			disableGutters={!smUp}
+			sx={{ pt: { sm: 6 }, pb: { xs: 4, sm: 10 } }}
+		>
 			<Grid
 				container
 				direction={{ xs: "column-reverse", sm: "row" }}
@@ -26,28 +38,30 @@ const Hero: React.FC<Props> = ({
 				spacing={{ xs: 3, sm: 0 }}
 			>
 				<Grid item xs={12} sm={6} md={7}>
-					<Typography variant="h5" color="secondary.contrastText">
-						{greeting}
-					</Typography>
-					<Typography variant="h1" color="primary.main">
-						{name}
-					</Typography>
-					<Typography variant="h2" color="primary.light" paragraph>
-						{title}
-					</Typography>
-					{shortIntroduction?.map((line: string, index: number) => (
-						<Typography key={`hero-description-${index}`} variant="h5">
-							{line}
+					<Container disableGutters={smUp}>
+						<Typography variant="h5" color="secondary.contrastText">
+							{greeting}
 						</Typography>
-					))}
+						<Typography variant="h1" color="primary.main">
+							{name}
+						</Typography>
+						<Typography variant="h2" color="primary.light" paragraph>
+							{title}
+						</Typography>
+						{shortIntroduction?.map((line: string, index: number) => (
+							<Typography key={`hero-description-${index}`} variant="h5">
+								{line}
+							</Typography>
+						))}
+					</Container>
 				</Grid>
 				<Grid item xs={12} sm md>
 					<Box
-						sx={{
-							width: { xs: `calc(100vw - 32px)`, sm: "100%" },
-							borderRadius: ({ spacing }) => spacing(heroImageBorderRadius),
-							boxShadow: 12,
-						}}
+						sx={({ spacing }) => ({
+							width: { xs: `calc(100vw)`, sm: "100%" },
+							borderRadius: { sm: spacing(heroImageBorderRadius) },
+							boxShadow: { sm: 12 },
+						})}
 					>
 						<Image
 							src={heroImage?.url}
@@ -55,7 +69,9 @@ const Hero: React.FC<Props> = ({
 							width={heroImage?.width || 1600}
 							height={heroImage?.height || 1200}
 							layout="responsive"
-							style={{ borderRadius: spacing(heroImageBorderRadius) }}
+							style={{
+								borderRadius: smUp ? spacing(heroImageBorderRadius) : 0,
+							}}
 						/>
 					</Box>
 				</Grid>
