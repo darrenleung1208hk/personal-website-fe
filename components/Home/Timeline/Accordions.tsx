@@ -38,7 +38,7 @@ const Accordions = ({ data }: Props) => {
 									<Typography variant="h6" color="primary.main">
 										{title}
 									</Typography>
-									<Typography variant="subtitle2" color="text.secondary">
+									<Typography variant="subtitle1" color="text.secondary">
 										<Link
 											href={organization.website}
 											target="_blank"

@@ -1,11 +1,12 @@
-import "@fontsource/poppins";
+import "@fontsource/inter";
+import "@fontsource/ubuntu";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { AppBar, Footer } from "../components";
+import BackToTop from "../components/BackToTop";
 import "../styles/globals.css";
 import theme from "../styles/theme";
-import Head from "next/head";
-import BackToTop from "../components/BackToTop";
 
 const routes = [
 	{ name: "About", href: "#about" },
