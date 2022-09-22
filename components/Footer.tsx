@@ -19,18 +19,18 @@ type Props = {
 
 const iconStyles = ({ spacing }: Theme) => ({
 	color: "#fff",
-	fontSize: spacing(3),
+	fontSize: { xs: spacing(4), md: spacing(3) },
 });
 
 const Footer: React.FC<Props> = ({ linkedin, email, github }) => {
 	return (
-		<Box bgcolor="primary.dark" color="#fff" py={{ xs: 6, md: 2 }}>
+		<Box bgcolor="primary.dark" color="#fff" py={{ xs: 3, md: 2 }}>
 			<Container>
 				<Grid
 					container
 					justifyContent="space-between"
 					alignItems="center"
-					spacing={2}
+					spacing={{ xs: 1, md: 2 }}
 				>
 					<Grid
 						item
