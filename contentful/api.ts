@@ -58,8 +58,8 @@ export async function getHomePageEntries() {
       ${profileQueryFragment}
     }
   `);
-	return {
-		experience: data?.positionCollection?.items,
-		profile: data?.profileCollection?.items[0],
-	};
+	// return {
+	// 	experience: data?.positionCollection?.items,
+	// 	profile: data?.profileCollection?.items[0],
+	// };
 }
