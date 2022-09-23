@@ -56,6 +56,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 					sizes="512x512"
 					href="/android-chrome-512x512.png"
 				></link>
+				<link rel="icon" href="/favicon.ico"></link>
+				<link rel="manifest" href="/site.webmanifest"></link>
 			</Head>
 			<CssBaseline />
 			<AppBar navItems={routes} />
