@@ -8,6 +8,7 @@ export interface IExperience {
 	title: string;
 	startDate: Date;
 	endDate?: Date;
+	skills?: string[];
 	descriptions?: string[];
 	organization: IOrganization;
 }
