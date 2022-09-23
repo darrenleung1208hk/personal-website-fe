@@ -6,11 +6,13 @@ import {
 	Card,
 	CardContent,
 	CardHeader,
+	Chip,
 	IconButton,
 	List,
 	ListItem,
 	ListItemIcon,
 	ListItemText,
+	Stack,
 	Theme,
 	Tooltip,
 	useMediaQuery,
@@ -38,12 +40,12 @@ const Timeline = ({ data }: Props) => {
 			>
 				{data?.map(
 					(
-						{ title, organization, startDate, endDate, descriptions },
+						{ title, organization, startDate, endDate, descriptions, skills },
 						index1
 					) => {
 						return (
 							<SwiperSlide key={`timeline-${index1}`}>
-								<Card sx={{ m: 2, p: 2, height: "500px" }} raised>
+								<Card sx={{ m: 2, p: 2, height: "550px" }} raised>
 									<CardHeader
 										title={title}
 										titleTypographyProps={{
@@ -78,6 +80,17 @@ const Timeline = ({ data }: Props) => {
 										}
 									/>
 									<CardContent>
+										<Stack direction="row" spacing={1}>
+											{skills?.map((skill, skillIndex) => (
+												<Chip
+													key={`${organization}-${title}-${skill}-${skillIndex}`}
+													label={skill}
+													color="primary"
+													size="small"
+													variant="outlined"
+												/>
+											))}
+										</Stack>
 										<List>
 											{descriptions?.map((item, index2) => (
 												<ListItem

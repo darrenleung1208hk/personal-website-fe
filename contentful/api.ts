@@ -41,6 +41,7 @@ const experienceQueryFragement = `
       title
       startDate
       endDate
+      skills
       descriptions
       organization {
         name
