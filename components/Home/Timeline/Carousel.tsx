@@ -45,7 +45,7 @@ const Timeline = ({ data }: Props) => {
 					) => {
 						return (
 							<SwiperSlide key={`timeline-${index1}`}>
-								<Card sx={{ m: 2, p: 2, height: "500px" }} raised>
+								<Card sx={{ m: 2, p: 2, height: "550px" }} raised>
 									<CardHeader
 										title={title}
 										titleTypographyProps={{
